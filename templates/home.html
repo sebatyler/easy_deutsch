@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load bootstrap4 %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>easy Deutsch</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+    <!--
+    <style>
+        html {
+            font-size: 20px;
+        }
+    </style>
+    -->
+</head>
+<body>
+<div class="container">
+    <form class="form-inline">
+        <input class="form-control" type="search" name="word"
+               value="{{ word_info.word }}" placeholder="word" autofocus accesskey="s" />
+        <input class="form-control" type="submit" value="search" />
+    </form>
+</div>
+{% if word_info %}
+    <div class="container">
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">Wort</h5>
+                <ul>
+                    {% for text in word_info.info %}
+                        <li>{{ text|safe }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="list-group">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>english</th>
+                        </tr>
+                        {% for item in word_info.english %}
+                            <tr>
+                                <td>
+                                    {{ item }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="list-group">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>deutsch</th>
+                        </tr>
+                        {% for item in word_info.deutsch %}
+                            <tr>
+                                <td>
+                                    {{ item }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                {% for image in word_info.images %}
+                    <div class="col-2">
+                        <img src="{{ image }}" />
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if suggestions %}
+<div class="container">
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title">Suggestions</h5>
+            <ul>
+                {% for item in suggestions %}
+                    <li><a href="{{ item.link }}">{{ item.word|safe }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}
+</body>
+</html>
