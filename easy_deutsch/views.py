@@ -22,6 +22,7 @@ def get_context(word):
     res = requests.get('https://www.dict.cc', params=dict(s=word), headers=headers)
     soup = BeautifulSoup(res.content, 'html.parser')
 
+    # TODO: ADJ/ADV
     article = soup.select_one('tr[title="article sg | article pl"]')
 
     if not article:
@@ -66,8 +67,9 @@ def get_context(word):
                 break
 
     # https://pixabay.com/api/docs/
+    q = ' '.join(article_text.split('|')[0].split()[1:])
     res = requests.get('https://pixabay.com/api/',
-                       params=dict(key='10332400-1448498582be2b2e5a39c04ca', q=article_text, lang='de', per_page=12))
+                       params=dict(key='10332400-1448498582be2b2e5a39c04ca', q=q, lang='de', per_page=12))
     word_info['images'] = pydash.map_(res.json()['hits'],
                                       lambda x: dict(preview=x['previewURL'], large=x['largeImageURL']))
 
