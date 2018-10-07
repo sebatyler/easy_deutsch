@@ -73,8 +73,8 @@
             </div>
             <div class="row">
                 {% for item in word_info.images %}
-                    <div class="col-2">
-                        <a href="{{ item.large }}" target="_blank"><img src="{{ item.preview }}" /></a>
+                    <div class="col-4">
+                        <a href="{{ item.large }}" target="_blank"><img class="img-fluid" src="{{ item.large }}" /></a>
                     </div>
                 {% endfor %}
             </div>
