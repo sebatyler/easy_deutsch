@@ -68,7 +68,8 @@ def get_context(word):
     # https://pixabay.com/api/docs/
     res = requests.get('https://pixabay.com/api/',
                        params=dict(key='10332400-1448498582be2b2e5a39c04ca', q=article_text, lang='de', per_page=12))
-    word_info['images'] = pydash.pluck(res.json()['hits'], 'previewURL')
+    word_info['images'] = pydash.map_(res.json()['hits'],
+                                      lambda x: dict(preview=x['previewURL'], large=x['largeImageURL']))
 
     return dict(word_info=word_info)
 
