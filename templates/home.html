@@ -26,26 +26,14 @@
 </div>
 {% if word_info %}
     <div class="container">
-        <div class="card" style="width: 100%;">
-            <div class="card-body">
-                <h5 class="card-title">Wort</h5>
-                <ul>
-                    {% for text in word_info.info %}
-                        <li>{{ text|safe }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-4">
                 <div class="list-group">
                     <table class="table table-bordered">
                         <tr>
                             <th>english</th>
                         </tr>
-                        {% for item in word_info.english %}
+                        {% for item in word_info.en %}
                             <tr>
                                 <td>
                                     {{ item }}
@@ -55,13 +43,29 @@
                     </table>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
                 <div class="list-group">
                     <table class="table table-bordered">
                         <tr>
                             <th>deutsch</th>
                         </tr>
-                        {% for item in word_info.deutsch %}
+                        {% for item in word_info.de %}
+                            <tr>
+                                <td>
+                                    {{ item }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="list-group">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>korean</th>
+                        </tr>
+                        {% for item in word_info.ko %}
                             <tr>
                                 <td>
                                     {{ item }}
