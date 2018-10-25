@@ -27,49 +27,19 @@
 {% if word_info %}
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12">
                 <div class="list-group">
                     <table class="table table-bordered">
                         <tr>
-                            <th>english</th>
+                            {% for title in word_info.titles %}
+                                <th>{{ title }}</th>
+                            {% endfor %}
                         </tr>
-                        {% for item in word_info.en %}
+                        {% for result in word_info.results %}
                             <tr>
-                                <td>
-                                    {{ item }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="list-group">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>deutsch</th>
-                        </tr>
-                        {% for item in word_info.de %}
-                            <tr>
-                                <td>
-                                    {{ item }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="list-group">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>korean</th>
-                        </tr>
-                        {% for item in word_info.ko %}
-                            <tr>
-                                <td>
-                                    {{ item }}
-                                </td>
+                                <td>{{ result.0 }}</td>
+                                <td>{{ result.1 }}</td>
+                                <td>{{ result.2 }}</td>
                             </tr>
                         {% endfor %}
                     </table>

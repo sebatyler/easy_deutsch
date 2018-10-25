@@ -31,24 +31,34 @@ def get_context(word):
     word_info = dict(word=search_term, en=[], de=[])
 
     tables = result.select('div > table')
+    word_info['titles'] = ['english', 'deutsch', 'korean']
+    word_info['results'] = []
 
-    for entry in tables[0].select('tbody > tr[data-dz-ui="dictentry"]'):
-        for lang in ('en', 'de'):
-            data = entry.select_one(f'td[lang="{lang}"]')
-            if data:
-                word_info[lang].append(data.text)
+    for table in tables:
+        for entry in table.select('tbody > tr[data-dz-ui="dictentry"]'):
+            row = [''] * 3
+            for i, lang in enumerate(['en', 'de']):
+                data = entry.select_one(f'td[lang="{lang}"]')
+                if data:
+                    row[i] = data.text
+            word_info['results'].append(row)
+
+        if word_info['results']:
+            break
 
     # example sentences
     for entry in result.select('[data-dz-name="example"] > table > tbody > tr[data-dz-ui="dictentry"]'):
-        for lang in ('en', 'de'):
+        row = [''] * 3
+        for i, lang in enumerate(['en', 'de']):
             data = entry.select_one(f'td[lang="{lang}"]')
             if data:
-                word_info[lang].append(data.text)
+                row[i] = data.text
+        word_info['results'].append(row)
 
     # korean
-    if word_info['en']:
-        korean = Translator().translate(text=word_info['en'][0], dest='ko')
-        word_info['ko'] = [korean.text]
+    if word_info['results']:
+        korean = Translator().translate(text=word_info['results'][0][0], dest='ko')
+        word_info['results'][0][-1] = korean.text
 
     # TODO: search_term에 article 붙이기
     # https://pixabay.com/api/docs/
