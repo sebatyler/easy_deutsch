@@ -1,6 +1,3 @@
-import re
-from urllib.parse import quote_plus
-
 import pydash
 import requests
 from bs4 import BeautifulSoup
@@ -9,8 +6,7 @@ from django.shortcuts import render
 
 from py_translator import Translator
 
-patterns = [re.compile(f"var c{i}Arr = new Array\((.*)\);")
-            for i in range(1, 3)]
+from .async import run_async
 
 
 def get_context(word):
@@ -57,8 +53,13 @@ def get_context(word):
 
     # korean
     if word_info['results']:
-        korean = Translator().translate(text=word_info['results'][0][0], dest='ko')
-        word_info['results'][0][-1] = korean.text
+        translator = Translator()
+        results = run_async(
+            lambda t: translator.translate(text=t, src='en', dest='ko'),
+            pydash.map_(word_info['results'], 0)
+        )
+        for i, korean in enumerate(results):
+            word_info['results'][i][-1] = korean.text
 
     # TODO: search_term에 article 붙이기
     # https://pixabay.com/api/docs/
