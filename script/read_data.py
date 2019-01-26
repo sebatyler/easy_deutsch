@@ -18,7 +18,7 @@ tokenizer = Tokenizer(split_camel_case=True, token_classes=False, extra_info=Fal
 data = py_(sheet.get_all_values()).filter(lambda r: r[0]).map(lambda r: py_.compact(r)).map(
     lambda r: [py_.capitalize(r[0], strict=False), *r[1:]]
 ).map(
-    lambda r, i: dict(id=i, de=r[0], low=r[0].lower(), tokens=tokenizer.tokenize(r[0]), rest=r[1:])
+    lambda r, i: dict(id=i, de=r[0], low=r[0].lower(), tokens=tokenizer.tokenize(r[0].lower()), rest=r[1:])
 ).value()
 
 token_index = {}
@@ -32,7 +32,7 @@ for tokens in py_.pluck(data, 'tokens'):
         if t not in token_index:
             token_index[t] = dict(
                 key=t,
-                ids=py_(data).filter(lambda d: t in d['low']).pluck('id').value()
+                ids=py_(data).filter(lambda d: t in d['tokens']).pluck('id').value()
             )
 
 token_data = py_(token_index.values()).map(
@@ -44,7 +44,4 @@ for id_, count in py_(token_data).pluck('ids').flatten().count_by().value().item
     data[id_]['count'] = count
 
 with open('data.json', 'w') as f:
-    json.dump(dict(
-        data=data,
-        token_data=token_data
-    ), f, indent=4)
+    json.dump(dict(data=data, token_data=token_data), f, indent=4)

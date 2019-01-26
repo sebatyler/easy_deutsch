@@ -88,6 +88,10 @@ def home(request):
         data['token_data'] = py_.filter(data['token_data'], lambda t: t['key'] == word)
         ids = py_(data['token_data']).pluck('ids').flatten().value()
         data['data'] = py_.at(data['data'], *ids)
+        for d in data['data']:
+            d['de'] = py_(d['de'].split(' ')).map(
+                lambda s: f"<font color='red' class='font-weight-bold'>{s}</font>" if s.lower() == word else s
+            ).join(' ').value()
 
     data['sentences'] = py_.order_by(data['data'], ['-count'])
     return render(request, 'home.html', data)
