@@ -8,6 +8,9 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     {% bootstrap_messages %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
     <!--
     <style>
         html {
@@ -17,7 +20,17 @@
     -->
 </head>
 <body>
-<div class="container-fluid">
+<script>
+    var msg = new SpeechSynthesisUtterance();
+    msg.rate = 0.9;
+    function play(text, lang = 'de-DE') {
+        msg.text = text;
+        msg.lang = lang;
+        speechSynthesis.speak(msg);
+    }
+</script>
+
+<div class="container">
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
@@ -47,8 +60,18 @@
                         </tr>
                         {% for result in word_info.results %}
                             <tr>
-                                <td>{{ result.0 }}</td>
-                                <td>{{ result.1 }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.0 }}', 'en-US');">
+                                        <i class="fas fa-play-circle"></i>
+                                    </button>
+                                    {{ result.0 }}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.1 }}');">
+                                        <i class="fas fa-play-circle"></i>
+                                    </button>
+                                    {{ result.1 }}
+                                </td>
                                 <td>{{ result.2 }}</td>
                             </tr>
                         {% endfor %}

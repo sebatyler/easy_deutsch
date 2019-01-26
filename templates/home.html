@@ -8,6 +8,9 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     {% bootstrap_messages %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
     <!--
     <style>
         html {
@@ -17,7 +20,17 @@
     -->
 </head>
 <body>
-<div class="container-fluid">
+<script>
+    var msg = new SpeechSynthesisUtterance();
+    msg.lang = 'de-DE';
+    msg.rate = 0.9;
+    function play(text) {
+        msg.text = text;
+        speechSynthesis.speak(msg);
+    }
+</script>
+
+<div class="container">
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
@@ -46,7 +59,17 @@
                     <h5 class="card-title">Top sentences</h5>
                     <ol>
                         {% for data in sentences %}
-                            <li>{{ data.de|safe }} / {{ data.rest }} </li>
+                            <li>
+                                <button type="button" class="btn btn-sm" onclick="play('{{ data.de }}');">
+                                    <i class="fas fa-play-circle"></i>
+                                </button>
+                                {% if data.de_highlight %}
+                                    {{ data.de_highlight|safe }}
+                                {% else %}
+                                    {{ data.de }}
+                                {% endif %}
+                                / {{ data.rest }}
+                            </li>
                         {% endfor %}
                     </ol>
                 </div>

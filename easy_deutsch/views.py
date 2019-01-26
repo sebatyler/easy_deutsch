@@ -89,7 +89,7 @@ def home(request):
         ids = py_(data['token_data']).pluck('ids').flatten().value()
         data['data'] = py_.at(data['data'], *ids)
         for d in data['data']:
-            d['de'] = py_(d['de'].split(' ')).map(
+            d['de_highlight'] = py_(d['de'].split(' ')).map(
                 lambda s: f"<font color='red' class='font-weight-bold'>{s}</font>" if s.lower() == word else s
             ).join(' ').value()
 
