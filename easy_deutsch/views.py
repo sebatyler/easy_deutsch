@@ -71,6 +71,10 @@ def get_context(word):
     return dict(word_info=word_info)
 
 
-def home(request):
+def search(request):
     word = request.GET.get('word')
     return render(request, 'home.html', get_context(word))
+
+
+def home(request):
+    pass

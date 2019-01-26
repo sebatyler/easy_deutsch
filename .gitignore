@@ -115,3 +115,4 @@ venv.bak/
 # End of https://www.gitignore.io/api/django,python
 
 zappa_settings.json
+easy-deutsch.json
