@@ -25,7 +25,7 @@ token_index = {}
 
 for tokens in py_.pluck(data, 'tokens'):
     for token in tokens:
-        if token in ('=', '.', ',', '?', '"', '“', '”'):
+        if len(token) <= 1:
             continue
 
         t = token.lower()
@@ -38,8 +38,10 @@ for tokens in py_.pluck(data, 'tokens'):
 token_data = py_(token_index.values()).map(
     lambda d: dict(count=len(d['ids']), **d)
 ).order_by(['-count', 'key']).value()
-
 pprint.pprint(token_data)
+
+for id_, count in py_(token_data).pluck('ids').flatten().count_by().value().items():
+    data[id_]['count'] = count
 
 with open('data.json', 'w') as f:
     json.dump(dict(
