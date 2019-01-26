@@ -1,6 +1,8 @@
-import pydash
+import json
+
 import requests
 from bs4 import BeautifulSoup
+from pydash import py_
 
 from django.shortcuts import render
 
@@ -56,7 +58,7 @@ def get_context(word):
         translator = Translator()
         results = run_async(
             lambda t: translator.translate(text=t, src='en', dest='ko'),
-            pydash.map_(word_info['results'], 0)
+            py_.map(word_info['results'], 0)
         )
         for i, korean in enumerate(results):
             word_info['results'][i][-1] = korean.text
@@ -65,12 +67,27 @@ def get_context(word):
     # https://pixabay.com/api/docs/
     res = requests.get('https://pixabay.com/api/',
                        params=dict(key='10332400-1448498582be2b2e5a39c04ca', q=search_term, lang='de', per_page=12))
-    word_info['images'] = pydash.map_(res.json()['hits'],
-                                      lambda x: dict(preview=x['previewURL'], large=x['largeImageURL']))
+    word_info['images'] = py_.map(res.json()['hits'],
+                                  lambda x: dict(preview=x['previewURL'], large=x['largeImageURL']))
 
     return dict(word_info=word_info)
 
 
+def search(request):
+    word = request.GET.get('word')
+    return render(request, 'search.html', get_context(word))
+
+
 def home(request):
     word = request.GET.get('word')
-    return render(request, 'home.html', get_context(word))
+
+    with open('data.json') as f:
+        data = json.load(f)
+
+    if word:
+        data['token_data'] = py_.filter(data['token_data'], lambda t: t['key'] == word)
+        ids = py_(data['token_data']).pluck('ids').flatten().value()
+        data['data'] = py_.at(data['data'], *ids)
+
+    data['sentences'] = py_.order_by(data['data'], ['-count'])
+    return render(request, 'home.html', data)

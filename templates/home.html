@@ -17,58 +17,34 @@
     -->
 </head>
 <body>
-<div class="container">
-    <form class="form-inline">
-        <input class="form-control" type="search" name="word"
-               value="{{ word_info.word }}" placeholder="word" autofocus accesskey="s" />
-        <input class="form-control" type="submit" value="search" />
-    </form>
-</div>
-{% if word_info %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="list-group">
-                    <table class="table table-bordered">
-                        <tr>
-                            {% for title in word_info.titles %}
-                                <th>{{ title }}</th>
-                            {% endfor %}
-                        </tr>
-                        {% for result in word_info.results %}
-                            <tr>
-                                <td>{{ result.0 }}</td>
-                                <td>{{ result.1 }}</td>
-                                <td>{{ result.2 }}</td>
-                            </tr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Top words. <a href="?">Show all</a></h5>
+                    <ol>
+                        {% for data in token_data %}
+                            <li><a href="{% url 'search' %}?word={{ data.key }}">{{ data.key|safe }}</a> |
+                                <a href="?word={{ data.key }}">examples</a></li>
                         {% endfor %}
-                    </table>
+                    </ol>
                 </div>
             </div>
-            <div class="row">
-                {% for item in word_info.images %}
-                    <div class="col-4">
-                        <a href="{{ item.large }}" target="_blank"><img class="img-fluid" src="{{ item.large }}" /></a>
-                    </div>
-                {% endfor %}
+        </div>
+        <div class="col">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Top sentences</h5>
+                    <ol>
+                        {% for data in sentences %}
+                            <li>{{ data.de|safe }} / {{ data.rest|safe }} </li>
+                        {% endfor %}
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
-{% endif %}
-
-{% if suggestions %}
-<div class="container">
-    <div class="card" style="width: 100%;">
-        <div class="card-body">
-            <h5 class="card-title">Suggestions</h5>
-            <ul>
-                {% for item in suggestions %}
-                    <li><a href="{{ item.link }}">{{ item.word|safe }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
 </div>
-{% endif %}
 </body>
 </html>
