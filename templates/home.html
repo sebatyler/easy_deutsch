@@ -60,7 +60,7 @@
                     <ol>
                         {% for data in sentences %}
                             <li>
-                                <button type="button" class="btn btn-sm" onclick="play('{{ data.de }}');">
+                                <button type="button" class="btn btn-sm" onclick="play('{{ data.de|escapejs }}');">
                                     <i class="fas fa-play-circle"></i>
                                 </button>
                                 {% if data.de_highlight %}

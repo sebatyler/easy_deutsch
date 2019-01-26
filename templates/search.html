@@ -61,13 +61,13 @@
                         {% for result in word_info.results %}
                             <tr>
                                 <td>
-                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.0 }}', 'en-US');">
+                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.0|escapejs }}', 'en-US');">
                                         <i class="fas fa-play-circle"></i>
                                     </button>
                                     {{ result.0 }}
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.1 }}');">
+                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.1|escapejs }}');">
                                         <i class="fas fa-play-circle"></i>
                                     </button>
                                     {{ result.1 }}
