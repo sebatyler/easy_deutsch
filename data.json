@@ -9,7 +9,7 @@
                 "so"
             ],
             "rest": [
-                "\uc288\ud300\uc18c",
+                "Keep the change",
                 "\uc794\ub3c8\uc740 \ub410\uc5b4. (\uc794\ub3c8\uc744 \ud301\uc73c\ub85c \uc8fc\uace0 \uc2f6\uc744\ub54c)"
             ],
             "count": 2
@@ -22,7 +22,6 @@
                 "willkommen"
             ],
             "rest": [
-                "\ube4c\ucf54\uba58",
                 "Welcome",
                 "\ud658\uc601\ud55c\ub2e4."
             ],
@@ -38,7 +37,6 @@
                 "gehen"
             ],
             "rest": [
-                "\ub77c\uc2a4\uc6b4\uc2a4\uac8c\uc5d4",
                 "Let's go",
                 "\uac00\uc790~"
             ],
@@ -53,7 +51,6 @@
                 "nicht"
             ],
             "rest": [
-                "\ub178\ud750\ub2c8\uc2dc\ud2b8",
                 "not yet",
                 "\uc544\uc9c1 \uc544\ub2c8\uc57c. "
             ],
@@ -68,7 +65,6 @@
                 "mal"
             ],
             "rest": [
-                "\ucfe1 \ub9d0",
                 "have a look",
                 "\uc800\uac70\ubd10"
             ],
@@ -83,7 +79,6 @@
                 "mal"
             ],
             "rest": [
-                "\uc0e4\uc6b0\ub9d0",
                 "look here",
                 "\uc5ec\uae30\ubd10"
             ],
@@ -98,7 +93,6 @@
                 "mehr"
             ],
             "rest": [
-                "\ub2c8\uc2ef \uba54\uc544",
                 "no more",
                 "\ub354 \uc774\uc0c1 \uc544\ub2c8\uc57c"
             ],
@@ -114,7 +108,7 @@
                 "schade"
             ],
             "rest": [
-                "\ub2e4\uc2a4 \uc774\uc2a4\ud2b8 \uc0e4\ub370",
+                "This is a pity",
                 "\uc548\ud0c0\uae5d\ub2e4"
             ],
             "count": 3
@@ -131,7 +125,6 @@
                 "mit"
             ],
             "rest": [
-                "\ub77c\uc774\ub2e4 \ucf64\uc2a4 \ub450 \ub2c8\uc2ef \ubc0b",
                 "\uc548\ud0c0\uae5d\uac8c\ub3c4 \ub108\ub294 \uac19\uc774 \uc548\uac00\ub294\uad6c\ub098"
             ],
             "count": 5
@@ -147,7 +140,6 @@
                 "geburtstag"
             ],
             "rest": [
-                "\uc54c\ub808\uc2a4 \uad7f \ucda4 \uac8c\ubd80\uc5b4\uc2a4\ud0c1",
                 "\uc0dd\uc77c \ucd95\ud558\ud574"
             ],
             "count": 4
@@ -164,7 +156,7 @@
                 "zu"
             ],
             "rest": [
-                "\ub9c8\ud750 \ub2e4\uc2a4 \ud39c\uc2a4\ud0c0 \ube44\ud14c \ucd94",
+                "Please close the window",
                 "\ucc3d\ubb38 \ub2eb\uc544\uc8fc\uc138\uc694"
             ],
             "count": 5
@@ -180,7 +172,6 @@
                 "?"
             ],
             "rest": [
-                "\ubafc\uc2dc\ud14c\uc2a4 \ub450 \ucf54\uba58",
                 "\uac19\uc774 \uac08\ub798?"
             ],
             "count": 3
@@ -194,7 +185,6 @@
                 "gut"
             ],
             "rest": [
-                "\ub9c8\ud750\uc2a4 \uad7f",
                 "take care"
             ],
             "count": 2
@@ -212,6 +202,7 @@
                 "fahren"
             ],
             "rest": [
+                "I must go to Berlin tomorrow",
                 "\ub0b4\uc77c \ubca0\ub97c\ub9b0\uc5d0 \uac00\uc57c \ud55c\ub2e4."
             ],
             "count": 6
@@ -229,7 +220,6 @@
                 "?"
             ],
             "rest": [
-                "\ucfa8\ub128\uc9c0 \ubbf8\uc5b4 \ube44\ud14c \ud5ec\ud508?",
                 "Can you help me?"
             ],
             "count": 5
@@ -243,7 +233,6 @@
                 "ordnung"
             ],
             "rest": [
-                "\uc778 \uc624\uc544\ud2b8\ub219",
                 "OK"
             ],
             "count": 2
@@ -262,7 +251,6 @@
                 "bitte"
             ],
             "rest": [
-                "\ube44\ube44\ud14c / \ub178\ud750\ub9d0 \ube44\ud14c",
                 "Pardon? ",
                 "\ubb50\ub77c\uace0\uc694? \ud55c\ubc88\ub354 \uc598\uae30\ud574\uc904\ub798\uc694?"
             ],
@@ -279,7 +267,6 @@
                 "?"
             ],
             "rest": [
-                "\uac8c\uc5e3 \ub2e4\uc2a4 \uc544\uc6b0\ud750?",
                 "\uadf8\uac83\ub3c4 \uc88b\uc544?"
             ],
             "count": 3
@@ -296,7 +283,6 @@
                 "?"
             ],
             "rest": [
-                "\uc774\uc2a4\ud2b8 \ub2e4\uc2a4 \uc544\uc6b0\ud750 \uc624\ucf00\uc774?",
                 "\uadf8\uac83\ub3c4 \uc88b\uc544?"
             ],
             "count": 4
@@ -422,7 +408,6 @@
                 "weh"
             ],
             "rest": [
-                "\ub9c8\uc774\ub108 \uc544\uc6b0\uac74 \ud230\ubca0",
                 "\ub208\uc774 \uc544\ud504\ub2e4"
             ],
             "count": 4
@@ -438,7 +423,6 @@
                 "weh"
             ],
             "rest": [
-                "\ub9c8\uc778 \ucf54\ud504 \ud23f\ubca0",
                 "\uba38\ub9ac\uac00 \uc544\ud504\ub2e4"
             ],
             "count": 4
@@ -455,7 +439,6 @@
                 "toilette"
             ],
             "rest": [
-                "\uc774\uc2dc \ubb34\uc2a4 \ub4dc\ub9c1\uc5b8\ud2b8 \ucd94\uc5b4 \ud1a0\uc77c\ub808\ud130",
                 "\ub098 \ud654\uc7a5\uc2e4 \uae09\ud558\ub2e4"
             ],
             "count": 5
@@ -471,7 +454,6 @@
                 "?"
             ],
             "rest": [
-                "\uc774\uc2a4\ud2b8 \uc5d0\uc2a4 \ub4dc\ub9c1\uc5b8\ud2b8?",
                 "\uadf8\uac70 \uae09\ud574?"
             ],
             "count": 3
@@ -521,7 +503,6 @@
                 "?"
             ],
             "rest": [
-                "\ube44 \uc288\ub77c\uc774\ube0c\ud2b8 \ub9cc \ub2e4\uc2a4",
                 "\uadf8\uac70 \uc5b4\ub5bb\uac8c \uc368? (\ucca0\uc790 \ud558\ub098\uc529)"
             ],
             "count": 4
@@ -566,7 +547,6 @@
                 "nervosit\u00e4t"
             ],
             "rest": [
-                "\uc5d0\uc544 \ub77c\uc774\ub383 \uc548 \ub124\uc544\ud3ec\uc9c0\ud14c\ud2b8",
                 "\uadf8\ub294 \uc2e0\uacbd \uacfc\ubbfc\uc73c\ub85c \uace0\ud1b5 \ubc1b\ub294\ub2e4."
             ],
             "count": 4
@@ -15580,7 +15560,9 @@
                 "30",
                 "stundenkilometern"
             ],
-            "rest": [],
+            "rest": [
+                "at 30 kilometres per hour"
+            ],
             "count": 3
         },
         {
@@ -15594,13 +15576,477 @@
                 "/",
                 "h"
             ],
-            "rest": [],
+            "rest": [
+                "at 30 kilometres per hour"
+            ],
             "count": 3
+        },
+        {
+            "id": 981,
+            "de": "Das ist wirklich beeindruckend",
+            "low": "das ist wirklich beeindruckend",
+            "tokens": [
+                "das",
+                "ist",
+                "wirklich",
+                "beeindruckend"
+            ],
+            "rest": [
+                "That's really impressive"
+            ],
+            "count": 4
+        },
+        {
+            "id": 982,
+            "de": "Du gibst dir viel M\u00fche",
+            "low": "du gibst dir viel m\u00fche",
+            "tokens": [
+                "du",
+                "gibst",
+                "dir",
+                "viel",
+                "m\u00fche"
+            ],
+            "rest": [
+                "You're trying hard"
+            ],
+            "count": 5
+        },
+        {
+            "id": 983,
+            "de": "Ich w\u00fcnsche dir gute Besserung",
+            "low": "ich w\u00fcnsche dir gute besserung",
+            "tokens": [
+                "ich",
+                "w\u00fcnsche",
+                "dir",
+                "gute",
+                "besserung"
+            ],
+            "rest": [
+                "I hope you get well soon"
+            ],
+            "count": 5
+        },
+        {
+            "id": 984,
+            "de": "Ich w\u00fcnsche alles gute zum Geburtstag",
+            "low": "ich w\u00fcnsche alles gute zum geburtstag",
+            "tokens": [
+                "ich",
+                "w\u00fcnsche",
+                "alles",
+                "gute",
+                "zum",
+                "geburtstag"
+            ],
+            "rest": [
+                "I wish you a happy birthday"
+            ],
+            "count": 6
+        },
+        {
+            "id": 985,
+            "de": "In der Garage kann man parken",
+            "low": "in der garage kann man parken",
+            "tokens": [
+                "in",
+                "der",
+                "garage",
+                "kann",
+                "man",
+                "parken"
+            ],
+            "rest": [
+                "You can park in the garage"
+            ],
+            "count": 6
+        },
+        {
+            "id": 986,
+            "de": "Wenn mein Fahrrad kaputt ist, brauche ich Werkzeug",
+            "low": "wenn mein fahrrad kaputt ist, brauche ich werkzeug",
+            "tokens": [
+                "wenn",
+                "mein",
+                "fahrrad",
+                "kaputt",
+                "ist",
+                ",",
+                "brauche",
+                "ich",
+                "werkzeug"
+            ],
+            "rest": [
+                "If my bike is broken, I need tools."
+            ],
+            "count": 8
+        },
+        {
+            "id": 987,
+            "de": "An der n\u00e4chsten Kreuzung m\u00fcssen wir links abbiegen",
+            "low": "an der n\u00e4chsten kreuzung m\u00fcssen wir links abbiegen",
+            "tokens": [
+                "an",
+                "der",
+                "n\u00e4chsten",
+                "kreuzung",
+                "m\u00fcssen",
+                "wir",
+                "links",
+                "abbiegen"
+            ],
+            "rest": [
+                "At the next junction we have to turn left."
+            ],
+            "count": 8
+        },
+        {
+            "id": 988,
+            "de": "Das Flugzeug ist vor einer Stunde in Hamburg gelandet",
+            "low": "das flugzeug ist vor einer stunde in hamburg gelandet",
+            "tokens": [
+                "das",
+                "flugzeug",
+                "ist",
+                "vor",
+                "einer",
+                "stunde",
+                "in",
+                "hamburg",
+                "gelandet"
+            ],
+            "rest": [
+                "The plane landed in Hamburg an hour ago."
+            ],
+            "count": 9
+        },
+        {
+            "id": 989,
+            "de": "Der Wal landet",
+            "low": "der wal landet",
+            "tokens": [
+                "der",
+                "wal",
+                "landet"
+            ],
+            "rest": [
+                "the whale lands"
+            ],
+            "count": 3
+        },
+        {
+            "id": 990,
+            "de": "Gestern musste ich tanken",
+            "low": "gestern musste ich tanken",
+            "tokens": [
+                "gestern",
+                "musste",
+                "ich",
+                "tanken"
+            ],
+            "rest": [
+                "Yesterday I had to refuel."
+            ],
+            "count": 4
+        },
+        {
+            "id": 991,
+            "de": "Wenn es viel Nebel gibt, kann man nicht weit sehen",
+            "low": "wenn es viel nebel gibt, kann man nicht weit sehen",
+            "tokens": [
+                "wenn",
+                "es",
+                "viel",
+                "nebel",
+                "gibt",
+                ",",
+                "kann",
+                "man",
+                "nicht",
+                "weit",
+                "sehen"
+            ],
+            "rest": [
+                "If there's a lot of fog, you can't see far."
+            ],
+            "count": 10
+        },
+        {
+            "id": 992,
+            "de": "Die Wolke ist dunkel",
+            "low": "die wolke ist dunkel",
+            "tokens": [
+                "die",
+                "wolke",
+                "ist",
+                "dunkel"
+            ],
+            "rest": [
+                "The cloud is dark"
+            ],
+            "count": 4
+        },
+        {
+            "id": 993,
+            "de": "Mein Hemd ist rau",
+            "low": "mein hemd ist rau",
+            "tokens": [
+                "mein",
+                "hemd",
+                "ist",
+                "rau"
+            ],
+            "rest": [
+                "my shirt is rough"
+            ],
+            "count": 4
+        },
+        {
+            "id": 994,
+            "de": "Ich bin ganz nass",
+            "low": "ich bin ganz nass",
+            "tokens": [
+                "ich",
+                "bin",
+                "ganz",
+                "nass"
+            ],
+            "rest": [
+                "I'm all wet."
+            ],
+            "count": 4
+        },
+        {
+            "id": 995,
+            "de": "Ich schwitze",
+            "low": "ich schwitze",
+            "tokens": [
+                "ich",
+                "schwitze"
+            ],
+            "rest": [
+                "I'm sweating",
+                "\ub540 \ud758\ub9b0\ub2e4"
+            ],
+            "count": 2
+        },
+        {
+            "id": 996,
+            "de": "Ich habe viel Schwei\u00df",
+            "low": "ich habe viel schwei\u00df",
+            "tokens": [
+                "ich",
+                "habe",
+                "viel",
+                "schwei\u00df"
+            ],
+            "rest": [
+                "I have a lot of sweat"
+            ],
+            "count": 4
+        },
+        {
+            "id": 997,
+            "de": "Ich fahre gern das Alsterufer entlang",
+            "low": "ich fahre gern das alsterufer entlang",
+            "tokens": [
+                "ich",
+                "fahre",
+                "gern",
+                "das",
+                "alsterufer",
+                "entlang"
+            ],
+            "rest": [
+                "I like driving along the Alster lake side",
+                "Ufer \ub294 Fluss, See (\uac15\uc774\ub098 \ud638\uc218 \ub4f1)\uc774 \ub545\uc774\ub791 \ub9cc\ub098\ub294 \uacf3. \uac15\ubcc0, \ubb3c\uac00 \ub4f1"
+            ],
+            "count": 6
+        },
+        {
+            "id": 998,
+            "de": "Ich fahre gern die Nordseek\u00fcste entlang",
+            "low": "ich fahre gern die nordseek\u00fcste entlang",
+            "tokens": [
+                "ich",
+                "fahre",
+                "gern",
+                "die",
+                "nordseek\u00fcste",
+                "entlang"
+            ],
+            "rest": [
+                "I like to drive along the North Sea coast.",
+                "K\u00fcste \ub294 Meer"
+            ],
+            "count": 6
+        },
+        {
+            "id": 999,
+            "de": "Kannst du mir den Weg zum Bahnhof beschreiben?",
+            "low": "kannst du mir den weg zum bahnhof beschreiben?",
+            "tokens": [
+                "kannst",
+                "du",
+                "mir",
+                "den",
+                "weg",
+                "zum",
+                "bahnhof",
+                "beschreiben",
+                "?"
+            ],
+            "rest": [
+                "Can you describe the way to the station?"
+            ],
+            "count": 8
+        },
+        {
+            "id": 1000,
+            "de": "Brauchen Sie Hilfe?",
+            "low": "brauchen sie hilfe?",
+            "tokens": [
+                "brauchen",
+                "sie",
+                "hilfe",
+                "?"
+            ],
+            "rest": [
+                "Do you need help?"
+            ],
+            "count": 3
+        },
+        {
+            "id": 1001,
+            "de": "Nein danke, ich komme allein zurecht",
+            "low": "nein danke, ich komme allein zurecht",
+            "tokens": [
+                "nein",
+                "danke",
+                ",",
+                "ich",
+                "komme",
+                "allein",
+                "zurecht"
+            ],
+            "rest": [
+                "No, thanks, I can manage on my own."
+            ],
+            "count": 6
+        },
+        {
+            "id": 1002,
+            "de": "Ohne Brille komme ich nicht zurecht",
+            "low": "ohne brille komme ich nicht zurecht",
+            "tokens": [
+                "ohne",
+                "brille",
+                "komme",
+                "ich",
+                "nicht",
+                "zurecht"
+            ],
+            "rest": [
+                "I can't do without glasses"
+            ],
+            "count": 6
+        },
+        {
+            "id": 1003,
+            "de": "Ich komme nicht mit neuen Programm zurecht, kannst du mir helfen?",
+            "low": "ich komme nicht mit neuen programm zurecht, kannst du mir helfen?",
+            "tokens": [
+                "ich",
+                "komme",
+                "nicht",
+                "mit",
+                "neuen",
+                "programm",
+                "zurecht",
+                ",",
+                "kannst",
+                "du",
+                "mir",
+                "helfen",
+                "?"
+            ],
+            "rest": [
+                "I can not handle a new program, can you help me?"
+            ],
+            "count": 11
+        },
+        {
+            "id": 1004,
+            "de": "Wegen Bauarbeiten, ist die Stra\u00dfe gesperrt",
+            "low": "wegen bauarbeiten, ist die stra\u00dfe gesperrt",
+            "tokens": [
+                "wegen",
+                "bauarbeiten",
+                ",",
+                "ist",
+                "die",
+                "stra\u00dfe",
+                "gesperrt"
+            ],
+            "rest": [
+                "Because of construction work, the road is closed."
+            ],
+            "count": 6
+        },
+        {
+            "id": 1005,
+            "de": "Ich bin auch daf\u00fcr",
+            "low": "ich bin auch daf\u00fcr",
+            "tokens": [
+                "ich",
+                "bin",
+                "auch",
+                "daf\u00fcr"
+            ],
+            "rest": [
+                "I'm for it too.",
+                "\ub3d9\uc758"
+            ],
+            "count": 4
+        },
+        {
+            "id": 1006,
+            "de": "Ich bin dagegen",
+            "low": "ich bin dagegen",
+            "tokens": [
+                "ich",
+                "bin",
+                "dagegen"
+            ],
+            "rest": [
+                "I'm against it",
+                "\ubc18\ub300"
+            ],
+            "count": 3
+        },
+        {
+            "id": 1007,
+            "de": "Ich m\u00f6chte auf jeden Fall Fu\u00dfball spielen",
+            "low": "ich m\u00f6chte auf jeden fall fu\u00dfball spielen",
+            "tokens": [
+                "ich",
+                "m\u00f6chte",
+                "auf",
+                "jeden",
+                "fall",
+                "fu\u00dfball",
+                "spielen"
+            ],
+            "rest": [
+                "I definitely want to play football."
+            ],
+            "count": 7
         }
     ],
     "token_data": [
         {
-            "count": 302,
+            "count": 317,
             "key": "ich",
             "ids": [
                 13,
@@ -15904,11 +16350,26 @@
                 965,
                 967,
                 971,
-                975
+                975,
+                983,
+                984,
+                986,
+                990,
+                994,
+                995,
+                996,
+                997,
+                998,
+                1001,
+                1002,
+                1003,
+                1005,
+                1006,
+                1007
             ]
         },
         {
-            "count": 103,
+            "count": 109,
             "key": "ist",
             "ids": [
                 7,
@@ -16013,11 +16474,17 @@
                 948,
                 965,
                 966,
-                969
+                969,
+                981,
+                986,
+                988,
+                992,
+                993,
+                1004
             ]
         },
         {
-            "count": 98,
+            "count": 101,
             "key": "die",
             "ids": [
                 61,
@@ -16117,11 +16584,14 @@
                 939,
                 961,
                 962,
-                964
+                964,
+                992,
+                998,
+                1004
             ]
         },
         {
-            "count": 94,
+            "count": 97,
             "key": "das",
             "ids": [
                 7,
@@ -16217,11 +16687,14 @@
                 932,
                 937,
                 954,
-                965
+                965,
+                981,
+                988,
+                997
             ]
         },
         {
-            "count": 86,
+            "count": 87,
             "key": "habe",
             "ids": [
                 26,
@@ -16309,11 +16782,12 @@
                 928,
                 929,
                 959,
-                967
+                967,
+                996
             ]
         },
         {
-            "count": 82,
+            "count": 85,
             "key": "du",
             "ids": [
                 8,
@@ -16397,11 +16871,14 @@
                 937,
                 968,
                 972,
-                976
+                976,
+                982,
+                999,
+                1003
             ]
         },
         {
-            "count": 78,
+            "count": 81,
             "key": "nicht",
             "ids": [
                 3,
@@ -16481,11 +16958,14 @@
                 957,
                 959,
                 963,
-                966
+                966,
+                991,
+                1002,
+                1003
             ]
         },
         {
-            "count": 72,
+            "count": 73,
             "key": "sie",
             "ids": [
                 14,
@@ -16559,11 +17039,12 @@
                 858,
                 924,
                 964,
-                974
+                974,
+                1000
             ]
         },
         {
-            "count": 68,
+            "count": 71,
             "key": "der",
             "ids": [
                 54,
@@ -16633,7 +17114,10 @@
                 922,
                 935,
                 939,
-                960
+                960,
+                985,
+                987,
+                989
             ]
         },
         {
@@ -16836,7 +17320,7 @@
             ]
         },
         {
-            "count": 51,
+            "count": 52,
             "key": "den",
             "ids": [
                 31,
@@ -16889,11 +17373,12 @@
                 903,
                 909,
                 918,
-                973
+                973,
+                999
             ]
         },
         {
-            "count": 47,
+            "count": 48,
             "key": "auf",
             "ids": [
                 64,
@@ -16942,11 +17427,12 @@
                 935,
                 942,
                 949,
-                970
+                970,
+                1007
             ]
         },
         {
-            "count": 45,
+            "count": 46,
             "key": "es",
             "ids": [
                 30,
@@ -16993,11 +17479,12 @@
                 949,
                 951,
                 967,
-                977
+                977,
+                991
             ]
         },
         {
-            "count": 44,
+            "count": 46,
             "key": "in",
             "ids": [
                 15,
@@ -17043,11 +17530,13 @@
                 870,
                 875,
                 900,
-                960
+                960,
+                985,
+                988
             ]
         },
         {
-            "count": 43,
+            "count": 45,
             "key": "mir",
             "ids": [
                 14,
@@ -17092,7 +17581,57 @@
                 892,
                 925,
                 965,
-                976
+                976,
+                999,
+                1003
+            ]
+        },
+        {
+            "count": 42,
+            "key": "bin",
+            "ids": [
+                47,
+                49,
+                68,
+                71,
+                101,
+                102,
+                112,
+                130,
+                211,
+                234,
+                235,
+                287,
+                305,
+                312,
+                331,
+                386,
+                406,
+                421,
+                531,
+                541,
+                544,
+                549,
+                550,
+                551,
+                570,
+                571,
+                624,
+                626,
+                636,
+                637,
+                673,
+                697,
+                723,
+                724,
+                760,
+                791,
+                820,
+                851,
+                952,
+                994,
+                1005,
+                1006
             ]
         },
         {
@@ -17144,52 +17683,7 @@
             ]
         },
         {
-            "count": 39,
-            "key": "bin",
-            "ids": [
-                47,
-                49,
-                68,
-                71,
-                101,
-                102,
-                112,
-                130,
-                211,
-                234,
-                235,
-                287,
-                305,
-                312,
-                331,
-                386,
-                406,
-                421,
-                531,
-                541,
-                544,
-                549,
-                550,
-                551,
-                570,
-                571,
-                624,
-                626,
-                636,
-                637,
-                673,
-                697,
-                723,
-                724,
-                760,
-                791,
-                820,
-                851,
-                952
-            ]
-        },
-        {
-            "count": 39,
+            "count": 40,
             "key": "mit",
             "ids": [
                 8,
@@ -17230,7 +17724,8 @@
                 948,
                 978,
                 979,
-                980
+                980,
+                1003
             ]
         },
         {
@@ -17278,6 +17773,48 @@
             ]
         },
         {
+            "count": 36,
+            "key": "wir",
+            "ids": [
+                44,
+                84,
+                105,
+                115,
+                120,
+                135,
+                191,
+                213,
+                224,
+                266,
+                268,
+                278,
+                279,
+                314,
+                447,
+                481,
+                482,
+                658,
+                739,
+                744,
+                755,
+                757,
+                764,
+                765,
+                772,
+                779,
+                805,
+                846,
+                902,
+                908,
+                909,
+                910,
+                911,
+                914,
+                930,
+                987
+            ]
+        },
+        {
             "count": 35,
             "key": "eine",
             "ids": [
@@ -17316,47 +17853,6 @@
                 926,
                 944,
                 951
-            ]
-        },
-        {
-            "count": 35,
-            "key": "wir",
-            "ids": [
-                44,
-                84,
-                105,
-                115,
-                120,
-                135,
-                191,
-                213,
-                224,
-                266,
-                268,
-                278,
-                279,
-                314,
-                447,
-                481,
-                482,
-                658,
-                739,
-                744,
-                755,
-                757,
-                764,
-                765,
-                772,
-                779,
-                805,
-                846,
-                902,
-                908,
-                909,
-                910,
-                911,
-                914,
-                930
             ]
         },
         {
@@ -17535,6 +18031,35 @@
         },
         {
             "count": 23,
+            "key": "man",
+            "ids": [
+                33,
+                152,
+                185,
+                210,
+                315,
+                316,
+                346,
+                381,
+                382,
+                417,
+                566,
+                608,
+                686,
+                689,
+                858,
+                899,
+                947,
+                961,
+                962,
+                963,
+                964,
+                985,
+                991
+            ]
+        },
+        {
+            "count": 23,
             "key": "wie",
             "ids": [
                 16,
@@ -17560,6 +18085,62 @@
                 781,
                 818,
                 907
+            ]
+        },
+        {
+            "count": 22,
+            "key": "an",
+            "ids": [
+                36,
+                157,
+                190,
+                201,
+                202,
+                207,
+                236,
+                237,
+                282,
+                348,
+                349,
+                350,
+                428,
+                429,
+                500,
+                583,
+                733,
+                789,
+                880,
+                897,
+                973,
+                987
+            ]
+        },
+        {
+            "count": 22,
+            "key": "mein",
+            "ids": [
+                28,
+                43,
+                72,
+                150,
+                151,
+                349,
+                547,
+                548,
+                579,
+                587,
+                633,
+                656,
+                717,
+                790,
+                804,
+                822,
+                830,
+                886,
+                887,
+                923,
+                986,
+                993
             ]
         },
         {
@@ -17592,82 +18173,29 @@
         },
         {
             "count": 21,
-            "key": "an",
+            "key": "kann",
             "ids": [
-                36,
-                157,
-                190,
-                201,
-                202,
-                207,
-                236,
-                237,
-                282,
-                348,
-                349,
-                350,
-                428,
-                429,
-                500,
-                583,
-                733,
-                789,
-                880,
-                897,
-                973
-            ]
-        },
-        {
-            "count": 21,
-            "key": "man",
-            "ids": [
-                33,
-                152,
-                185,
-                210,
+                117,
+                164,
+                225,
+                261,
+                262,
                 315,
                 316,
-                346,
-                381,
-                382,
+                369,
                 417,
-                566,
-                608,
-                686,
-                689,
-                858,
-                899,
-                947,
-                961,
-                962,
-                963,
-                964
-            ]
-        },
-        {
-            "count": 20,
-            "key": "mein",
-            "ids": [
-                28,
-                43,
-                72,
-                150,
-                151,
-                349,
-                547,
-                548,
-                579,
-                587,
-                633,
-                656,
-                717,
-                790,
+                456,
+                565,
+                642,
+                664,
+                695,
                 804,
-                822,
-                830,
-                886,
-                887,
-                923
+                807,
+                824,
+                858,
+                861,
+                985,
+                991
             ]
         },
         {
@@ -17693,31 +18221,6 @@
                 735,
                 911,
                 939
-            ]
-        },
-        {
-            "count": 19,
-            "key": "kann",
-            "ids": [
-                117,
-                164,
-                225,
-                261,
-                262,
-                315,
-                316,
-                369,
-                417,
-                456,
-                565,
-                642,
-                664,
-                695,
-                804,
-                807,
-                824,
-                858,
-                861
             ]
         },
         {
@@ -17888,6 +18391,29 @@
         },
         {
             "count": 17,
+            "key": "m\u00f6chte",
+            "ids": [
+                31,
+                34,
+                227,
+                257,
+                343,
+                376,
+                382,
+                384,
+                524,
+                525,
+                612,
+                613,
+                777,
+                849,
+                900,
+                954,
+                1007
+            ]
+        },
+        {
+            "count": 17,
             "key": "so",
             "ids": [
                 0,
@@ -17907,6 +18433,29 @@
                 696,
                 780,
                 818
+            ]
+        },
+        {
+            "count": 17,
+            "key": "zum",
+            "ids": [
+                9,
+                170,
+                171,
+                183,
+                391,
+                486,
+                544,
+                545,
+                575,
+                721,
+                722,
+                791,
+                837,
+                945,
+                967,
+                984,
+                999
             ]
         },
         {
@@ -17933,28 +18482,6 @@
         },
         {
             "count": 16,
-            "key": "m\u00f6chte",
-            "ids": [
-                31,
-                34,
-                227,
-                257,
-                343,
-                376,
-                382,
-                384,
-                524,
-                525,
-                612,
-                613,
-                777,
-                849,
-                900,
-                954
-            ]
-        },
-        {
-            "count": 16,
             "key": "\u00fcber",
             "ids": [
                 191,
@@ -17973,6 +18500,27 @@
                 913,
                 920,
                 937
+            ]
+        },
+        {
+            "count": 15,
+            "key": "gern",
+            "ids": [
+                283,
+                299,
+                302,
+                335,
+                380,
+                505,
+                745,
+                746,
+                747,
+                748,
+                749,
+                752,
+                753,
+                997,
+                998
             ]
         },
         {
@@ -18019,23 +18567,44 @@
         },
         {
             "count": 15,
-            "key": "zum",
+            "key": "viel",
             "ids": [
-                9,
-                170,
-                171,
-                183,
-                391,
-                486,
-                544,
-                545,
-                575,
-                721,
-                722,
-                791,
-                837,
-                945,
-                967
+                35,
+                132,
+                158,
+                159,
+                160,
+                351,
+                455,
+                456,
+                697,
+                709,
+                756,
+                843,
+                982,
+                991,
+                996
+            ]
+        },
+        {
+            "count": 15,
+            "key": "wenn",
+            "ids": [
+                377,
+                378,
+                379,
+                380,
+                381,
+                382,
+                384,
+                385,
+                437,
+                441,
+                608,
+                685,
+                688,
+                986,
+                991
             ]
         },
         {
@@ -18056,6 +18625,26 @@
                 855,
                 862,
                 872
+            ]
+        },
+        {
+            "count": 14,
+            "key": "dir",
+            "ids": [
+                104,
+                190,
+                201,
+                218,
+                354,
+                640,
+                695,
+                776,
+                833,
+                885,
+                966,
+                975,
+                982,
+                983
             ]
         },
         {
@@ -18157,21 +18746,21 @@
         },
         {
             "count": 13,
-            "key": "gern",
+            "key": "hamburg",
             "ids": [
-                283,
-                299,
-                302,
-                335,
-                380,
-                505,
-                745,
-                746,
-                747,
-                748,
-                749,
-                752,
-                753
+                42,
+                46,
+                47,
+                165,
+                192,
+                312,
+                393,
+                481,
+                683,
+                687,
+                769,
+                788,
+                988
             ]
         },
         {
@@ -18251,25 +18840,6 @@
             ]
         },
         {
-            "count": 13,
-            "key": "wenn",
-            "ids": [
-                377,
-                378,
-                379,
-                380,
-                381,
-                382,
-                384,
-                385,
-                437,
-                441,
-                608,
-                685,
-                688
-            ]
-        },
-        {
             "count": 12,
             "key": "aber",
             "ids": [
@@ -18285,42 +18855,6 @@
                 723,
                 724,
                 779
-            ]
-        },
-        {
-            "count": 12,
-            "key": "dir",
-            "ids": [
-                104,
-                190,
-                201,
-                218,
-                354,
-                640,
-                695,
-                776,
-                833,
-                885,
-                966,
-                975
-            ]
-        },
-        {
-            "count": 12,
-            "key": "hamburg",
-            "ids": [
-                42,
-                46,
-                47,
-                165,
-                192,
-                312,
-                393,
-                481,
-                683,
-                687,
-                769,
-                788
             ]
         },
         {
@@ -18360,24 +18894,6 @@
             ]
         },
         {
-            "count": 12,
-            "key": "viel",
-            "ids": [
-                35,
-                132,
-                158,
-                159,
-                160,
-                351,
-                455,
-                456,
-                697,
-                709,
-                756,
-                843
-            ]
-        },
-        {
             "count": 11,
             "key": "arbeit",
             "ids": [
@@ -18392,6 +18908,23 @@
                 621,
                 922,
                 969
+            ]
+        },
+        {
+            "count": 11,
+            "key": "auch",
+            "ids": [
+                17,
+                18,
+                302,
+                445,
+                752,
+                753,
+                754,
+                779,
+                884,
+                911,
+                1005
             ]
         },
         {
@@ -18481,18 +19014,18 @@
         },
         {
             "count": 10,
-            "key": "auch",
+            "key": "alles",
             "ids": [
-                17,
-                18,
-                302,
-                445,
-                752,
-                753,
-                754,
-                779,
-                884,
-                911
+                9,
+                170,
+                171,
+                186,
+                327,
+                377,
+                381,
+                481,
+                500,
+                984
             ]
         },
         {
@@ -18577,6 +19110,22 @@
         },
         {
             "count": 10,
+            "key": "kannst",
+            "ids": [
+                57,
+                323,
+                380,
+                437,
+                444,
+                493,
+                528,
+                802,
+                999,
+                1003
+            ]
+        },
+        {
+            "count": 10,
             "key": "kommt",
             "ids": [
                 79,
@@ -18609,6 +19158,22 @@
         },
         {
             "count": 10,
+            "key": "vor",
+            "ids": [
+                49,
+                91,
+                125,
+                640,
+                641,
+                719,
+                747,
+                764,
+                791,
+                988
+            ]
+        },
+        {
+            "count": 10,
             "key": "wetter",
             "ids": [
                 192,
@@ -18621,21 +19186,6 @@
                 650,
                 651,
                 902
-            ]
-        },
-        {
-            "count": 9,
-            "key": "alles",
-            "ids": [
-                9,
-                170,
-                171,
-                186,
-                327,
-                377,
-                381,
-                481,
-                500
             ]
         },
         {
@@ -18700,21 +19250,6 @@
         },
         {
             "count": 9,
-            "key": "vor",
-            "ids": [
-                49,
-                91,
-                125,
-                640,
-                641,
-                719,
-                747,
-                764,
-                791
-            ]
-        },
-        {
-            "count": 9,
             "key": "zur",
             "ids": [
                 29,
@@ -18758,6 +19293,20 @@
         },
         {
             "count": 8,
+            "key": "fahre",
+            "ids": [
+                109,
+                841,
+                842,
+                905,
+                906,
+                919,
+                997,
+                998
+            ]
+        },
+        {
+            "count": 8,
             "key": "finde",
             "ids": [
                 119,
@@ -18786,6 +19335,20 @@
         },
         {
             "count": 8,
+            "key": "fu\u00dfball",
+            "ids": [
+                189,
+                418,
+                419,
+                434,
+                435,
+                448,
+                764,
+                1007
+            ]
+        },
+        {
+            "count": 8,
             "key": "f\u00e4hrt",
             "ids": [
                 73,
@@ -18796,6 +19359,34 @@
                 872,
                 875,
                 877
+            ]
+        },
+        {
+            "count": 8,
+            "key": "gibt",
+            "ids": [
+                280,
+                285,
+                345,
+                470,
+                634,
+                800,
+                949,
+                991
+            ]
+        },
+        {
+            "count": 8,
+            "key": "gute",
+            "ids": [
+                9,
+                87,
+                170,
+                171,
+                686,
+                689,
+                983,
+                984
             ]
         },
         {
@@ -18838,20 +19429,6 @@
                 618,
                 690,
                 692
-            ]
-        },
-        {
-            "count": 8,
-            "key": "kannst",
-            "ids": [
-                57,
-                323,
-                380,
-                437,
-                444,
-                493,
-                528,
-                802
             ]
         },
         {
@@ -19047,19 +19624,6 @@
         },
         {
             "count": 7,
-            "key": "fu\u00dfball",
-            "ids": [
-                189,
-                418,
-                419,
-                434,
-                435,
-                448,
-                764
-            ]
-        },
-        {
-            "count": 7,
             "key": "gehen",
             "ids": [
                 2,
@@ -19069,19 +19633,6 @@
                 526,
                 597,
                 726
-            ]
-        },
-        {
-            "count": 7,
-            "key": "gibt",
-            "ids": [
-                280,
-                285,
-                345,
-                470,
-                634,
-                800,
-                949
             ]
         },
         {
@@ -19121,6 +19672,19 @@
                 602,
                 603,
                 868
+            ]
+        },
+        {
+            "count": 7,
+            "key": "komme",
+            "ids": [
+                104,
+                391,
+                865,
+                916,
+                1001,
+                1002,
+                1003
             ]
         },
         {
@@ -19229,6 +19793,19 @@
         },
         {
             "count": 7,
+            "key": "weit",
+            "ids": [
+                315,
+                522,
+                523,
+                713,
+                917,
+                969,
+                991
+            ]
+        },
+        {
+            "count": 7,
             "key": "zeit",
             "ids": [
                 94,
@@ -19314,18 +19891,6 @@
         },
         {
             "count": 6,
-            "key": "fahre",
-            "ids": [
-                109,
-                841,
-                842,
-                905,
-                906,
-                919
-            ]
-        },
-        {
-            "count": 6,
             "key": "fahren",
             "ids": [
                 13,
@@ -19370,18 +19935,6 @@
                 834,
                 835,
                 836
-            ]
-        },
-        {
-            "count": 6,
-            "key": "gute",
-            "ids": [
-                9,
-                87,
-                170,
-                171,
-                686,
-                689
             ]
         },
         {
@@ -19458,6 +20011,30 @@
         },
         {
             "count": 6,
+            "key": "m\u00fcssen",
+            "ids": [
+                846,
+                909,
+                910,
+                960,
+                970,
+                987
+            ]
+        },
+        {
+            "count": 6,
+            "key": "neuen",
+            "ids": [
+                267,
+                577,
+                828,
+                829,
+                922,
+                1003
+            ]
+        },
+        {
+            "count": 6,
             "key": "schnell",
             "ids": [
                 94,
@@ -19502,18 +20079,6 @@
                 684,
                 889,
                 894
-            ]
-        },
-        {
-            "count": 6,
-            "key": "weit",
-            "ids": [
-                315,
-                522,
-                523,
-                713,
-                917,
-                969
             ]
         },
         {
@@ -19632,6 +20197,17 @@
         },
         {
             "count": 5,
+            "key": "danke",
+            "ids": [
+                218,
+                326,
+                327,
+                328,
+                1001
+            ]
+        },
+        {
+            "count": 5,
             "key": "darauf",
             "ids": [
                 199,
@@ -19639,6 +20215,17 @@
                 503,
                 758,
                 759
+            ]
+        },
+        {
+            "count": 5,
+            "key": "einer",
+            "ids": [
+                704,
+                705,
+                782,
+                825,
+                988
             ]
         },
         {
@@ -19749,28 +20336,6 @@
                 684,
                 723,
                 724
-            ]
-        },
-        {
-            "count": 5,
-            "key": "m\u00fcssen",
-            "ids": [
-                846,
-                909,
-                910,
-                960,
-                970
-            ]
-        },
-        {
-            "count": 5,
-            "key": "neuen",
-            "ids": [
-                267,
-                577,
-                828,
-                829,
-                922
             ]
         },
         {
@@ -19983,6 +20548,16 @@
         },
         {
             "count": 4,
+            "key": "allein",
+            "ids": [
+                137,
+                744,
+                851,
+                1001
+            ]
+        },
+        {
+            "count": 4,
             "key": "anderen",
             "ids": [
                 288,
@@ -20033,22 +20608,22 @@
         },
         {
             "count": 4,
+            "key": "daf\u00fcr",
+            "ids": [
+                172,
+                208,
+                501,
+                1005
+            ]
+        },
+        {
+            "count": 4,
             "key": "damit",
             "ids": [
                 209,
                 210,
                 216,
                 861
-            ]
-        },
-        {
-            "count": 4,
-            "key": "danke",
-            "ids": [
-                218,
-                326,
-                327,
-                328
             ]
         },
         {
@@ -20093,12 +20668,32 @@
         },
         {
             "count": 4,
-            "key": "einer",
+            "key": "entlang",
             "ids": [
-                704,
-                705,
-                782,
-                825
+                908,
+                914,
+                997,
+                998
+            ]
+        },
+        {
+            "count": 4,
+            "key": "fahrrad",
+            "ids": [
+                547,
+                548,
+                822,
+                986
+            ]
+        },
+        {
+            "count": 4,
+            "key": "fall",
+            "ids": [
+                709,
+                719,
+                844,
+                1007
             ]
         },
         {
@@ -20109,6 +20704,16 @@
                 263,
                 338,
                 388
+            ]
+        },
+        {
+            "count": 4,
+            "key": "ganz",
+            "ids": [
+                110,
+                481,
+                909,
+                994
             ]
         },
         {
@@ -20129,6 +20734,16 @@
                 559,
                 560,
                 802
+            ]
+        },
+        {
+            "count": 4,
+            "key": "geburtstag",
+            "ids": [
+                9,
+                170,
+                171,
+                984
             ]
         },
         {
@@ -20163,6 +20778,16 @@
         },
         {
             "count": 4,
+            "key": "gestern",
+            "ids": [
+                888,
+                902,
+                936,
+                990
+            ]
+        },
+        {
+            "count": 4,
             "key": "gl\u00fcck",
             "ids": [
                 183,
@@ -20193,22 +20818,22 @@
         },
         {
             "count": 4,
+            "key": "jeden",
+            "ids": [
+                436,
+                439,
+                736,
+                1007
+            ]
+        },
+        {
+            "count": 4,
             "key": "kaffee",
             "ids": [
                 155,
                 181,
                 447,
                 775
-            ]
-        },
-        {
-            "count": 4,
-            "key": "komme",
-            "ids": [
-                104,
-                391,
-                865,
-                916
             ]
         },
         {
@@ -20323,6 +20948,26 @@
         },
         {
             "count": 4,
+            "key": "sehen",
+            "ids": [
+                115,
+                315,
+                316,
+                991
+            ]
+        },
+        {
+            "count": 4,
+            "key": "spielen",
+            "ids": [
+                105,
+                755,
+                764,
+                1007
+            ]
+        },
+        {
+            "count": 4,
             "key": "springt",
             "ids": [
                 64,
@@ -20349,6 +20994,16 @@
                 241,
                 676,
                 880
+            ]
+        },
+        {
+            "count": 4,
+            "key": "stra\u00dfe",
+            "ids": [
+                876,
+                920,
+                935,
+                1004
             ]
         },
         {
@@ -20403,6 +21058,16 @@
         },
         {
             "count": 4,
+            "key": "weg",
+            "ids": [
+                523,
+                917,
+                969,
+                999
+            ]
+        },
+        {
+            "count": 4,
             "key": "wein",
             "ids": [
                 159,
@@ -20443,6 +21108,16 @@
         },
         {
             "count": 4,
+            "key": "wirklich",
+            "ids": [
+                118,
+                696,
+                850,
+                981
+            ]
+        },
+        {
+            "count": 4,
             "key": "wochenende",
             "ids": [
                 109,
@@ -20472,11 +21147,11 @@
         },
         {
             "count": 3,
-            "key": "allein",
+            "key": "abbiegen",
             "ids": [
-                137,
-                744,
-                851
+                909,
+                912,
+                987
             ]
         },
         {
@@ -20598,6 +21273,15 @@
         },
         {
             "count": 3,
+            "key": "brauche",
+            "ids": [
+                398,
+                799,
+                986
+            ]
+        },
+        {
+            "count": 3,
             "key": "brief",
             "ids": [
                 58,
@@ -20630,15 +21314,6 @@
                 827,
                 828,
                 830
-            ]
-        },
-        {
-            "count": 3,
-            "key": "daf\u00fcr",
-            "ids": [
-                172,
-                208,
-                501
             ]
         },
         {
@@ -20769,24 +21444,6 @@
         },
         {
             "count": 3,
-            "key": "fahrrad",
-            "ids": [
-                547,
-                548,
-                822
-            ]
-        },
-        {
-            "count": 3,
-            "key": "fall",
-            "ids": [
-                709,
-                719,
-                844
-            ]
-        },
-        {
-            "count": 3,
             "key": "falsch",
             "ids": [
                 230,
@@ -20877,29 +21534,11 @@
         },
         {
             "count": 3,
-            "key": "ganz",
-            "ids": [
-                110,
-                481,
-                909
-            ]
-        },
-        {
-            "count": 3,
             "key": "geblieben",
             "ids": [
                 68,
                 531,
                 541
-            ]
-        },
-        {
-            "count": 3,
-            "key": "geburtstag",
-            "ids": [
-                9,
-                170,
-                171
             ]
         },
         {
@@ -20913,11 +21552,11 @@
         },
         {
             "count": 3,
-            "key": "gestern",
+            "key": "gibst",
             "ids": [
-                888,
-                902,
-                936
+                691,
+                692,
+                982
             ]
         },
         {
@@ -21021,20 +21660,20 @@
         },
         {
             "count": 3,
-            "key": "jeden",
-            "ids": [
-                436,
-                439,
-                736
-            ]
-        },
-        {
-            "count": 3,
             "key": "jemand",
             "ids": [
                 185,
                 530,
                 815
+            ]
+        },
+        {
+            "count": 3,
+            "key": "kaputt",
+            "ids": [
+                405,
+                965,
+                986
             ]
         },
         {
@@ -21183,6 +21822,24 @@
         },
         {
             "count": 3,
+            "key": "nein",
+            "ids": [
+                339,
+                442,
+                1001
+            ]
+        },
+        {
+            "count": 3,
+            "key": "ohne",
+            "ids": [
+                323,
+                842,
+                1002
+            ]
+        },
+        {
+            "count": 3,
             "key": "ordnung",
             "ids": [
                 15,
@@ -21300,15 +21957,6 @@
         },
         {
             "count": 3,
-            "key": "sehen",
-            "ids": [
-                115,
-                315,
-                316
-            ]
-        },
-        {
-            "count": 3,
             "key": "sofa",
             "ids": [
                 64,
@@ -21336,15 +21984,6 @@
         },
         {
             "count": 3,
-            "key": "spielen",
-            "ids": [
-                105,
-                755,
-                764
-            ]
-        },
-        {
-            "count": 3,
             "key": "spreche",
             "ids": [
                 167,
@@ -21354,11 +21993,11 @@
         },
         {
             "count": 3,
-            "key": "stra\u00dfe",
+            "key": "stunde",
             "ids": [
-                876,
-                920,
-                935
+                63,
+                978,
+                988
             ]
         },
         {
@@ -21480,11 +22119,11 @@
         },
         {
             "count": 3,
-            "key": "weg",
+            "key": "wegen",
             "ids": [
-                523,
-                917,
-                969
+                940,
+                950,
+                1004
             ]
         },
         {
@@ -21521,15 +22160,6 @@
                 720,
                 844,
                 845
-            ]
-        },
-        {
-            "count": 3,
-            "key": "wirklich",
-            "ids": [
-                118,
-                696,
-                850
             ]
         },
         {
@@ -21588,6 +22218,15 @@
         },
         {
             "count": 3,
+            "key": "zurecht",
+            "ids": [
+                1001,
+                1002,
+                1003
+            ]
+        },
+        {
+            "count": 3,
             "key": "zur\u00fcck",
             "ids": [
                 112,
@@ -21627,14 +22266,6 @@
             "ids": [
                 666,
                 667
-            ]
-        },
-        {
-            "count": 2,
-            "key": "abbiegen",
-            "ids": [
-                909,
-                912
             ]
         },
         {
@@ -21767,6 +22398,14 @@
         },
         {
             "count": 2,
+            "key": "besserung",
+            "ids": [
+                87,
+                983
+            ]
+        },
+        {
+            "count": 2,
             "key": "besten",
             "ids": [
                 333,
@@ -21795,14 +22434,6 @@
             "ids": [
                 750,
                 759
-            ]
-        },
-        {
-            "count": 2,
-            "key": "brauche",
-            "ids": [
-                398,
-                799
             ]
         },
         {
@@ -22015,14 +22646,6 @@
         },
         {
             "count": 2,
-            "key": "entlang",
-            "ids": [
-                908,
-                914
-            ]
-        },
-        {
-            "count": 2,
             "key": "erinnern",
             "ids": [
                 493,
@@ -22071,6 +22694,14 @@
         },
         {
             "count": 2,
+            "key": "flugzeug",
+            "ids": [
+                141,
+                988
+            ]
+        },
+        {
+            "count": 2,
             "key": "flussufer",
             "ids": [
                 908,
@@ -22107,6 +22738,14 @@
             "ids": [
                 288,
                 873
+            ]
+        },
+        {
+            "count": 2,
+            "key": "garage",
+            "ids": [
+                872,
+                985
             ]
         },
         {
@@ -22215,6 +22854,14 @@
         },
         {
             "count": 2,
+            "key": "gesperrt",
+            "ids": [
+                944,
+                1004
+            ]
+        },
+        {
+            "count": 2,
             "key": "gesprochen",
             "ids": [
                 204,
@@ -22235,14 +22882,6 @@
             "ids": [
                 321,
                 571
-            ]
-        },
-        {
-            "count": 2,
-            "key": "gibst",
-            "ids": [
-                691,
-                692
             ]
         },
         {
@@ -22299,6 +22938,22 @@
             "ids": [
                 828,
                 829
+            ]
+        },
+        {
+            "count": 2,
+            "key": "helfen",
+            "ids": [
+                14,
+                1003
+            ]
+        },
+        {
+            "count": 2,
+            "key": "hemd",
+            "ids": [
+                350,
+                993
             ]
         },
         {
@@ -22371,14 +23026,6 @@
             "ids": [
                 828,
                 829
-            ]
-        },
-        {
-            "count": 2,
-            "key": "kaputt",
-            "ids": [
-                405,
-                965
             ]
         },
         {
@@ -22479,6 +23126,14 @@
         },
         {
             "count": 2,
+            "key": "kreuzung",
+            "ids": [
+                912,
+                987
+            ]
+        },
+        {
+            "count": 2,
             "key": "k\u00fcmmerst",
             "ids": [
                 464,
@@ -22507,6 +23162,14 @@
             "ids": [
                 746,
                 749
+            ]
+        },
+        {
+            "count": 2,
+            "key": "links",
+            "ids": [
+                912,
+                987
             ]
         },
         {
@@ -22599,6 +23262,14 @@
         },
         {
             "count": 2,
+            "key": "musste",
+            "ids": [
+                601,
+                990
+            ]
+        },
+        {
+            "count": 2,
             "key": "m\u00f6chten",
             "ids": [
                 364,
@@ -22623,6 +23294,14 @@
         },
         {
             "count": 2,
+            "key": "nass",
+            "ids": [
+                740,
+                994
+            ]
+        },
+        {
+            "count": 2,
             "key": "nat\u00fcrlicher",
             "ids": [
                 222,
@@ -22631,10 +23310,10 @@
         },
         {
             "count": 2,
-            "key": "nein",
+            "key": "nebel",
             "ids": [
-                339,
-                442
+                941,
+                991
             ]
         },
         {
@@ -22679,6 +23358,14 @@
         },
         {
             "count": 2,
+            "key": "n\u00e4chsten",
+            "ids": [
+                912,
+                987
+            ]
+        },
+        {
+            "count": 2,
             "key": "n\u00e4chstes",
             "ids": [
                 332,
@@ -22703,10 +23390,10 @@
         },
         {
             "count": 2,
-            "key": "ohne",
+            "key": "parken",
             "ids": [
-                323,
-                842
+                971,
+                985
             ]
         },
         {
@@ -23087,14 +23774,6 @@
         },
         {
             "count": 2,
-            "key": "stunde",
-            "ids": [
-                63,
-                978
-            ]
-        },
-        {
-            "count": 2,
             "key": "st\u00e4ndig",
             "ids": [
                 937,
@@ -23263,14 +23942,6 @@
         },
         {
             "count": 2,
-            "key": "wegen",
-            "ids": [
-                940,
-                950
-            ]
-        },
-        {
-            "count": 2,
             "key": "welche",
             "ids": [
                 96,
@@ -23283,6 +23954,14 @@
             "ids": [
                 817,
                 890
+            ]
+        },
+        {
+            "count": 2,
+            "key": "werkzeug",
+            "ids": [
+                963,
+                986
             ]
         },
         {
@@ -23355,6 +24034,14 @@
             "ids": [
                 657,
                 670
+            ]
+        },
+        {
+            "count": 2,
+            "key": "w\u00fcnsche",
+            "ids": [
+                983,
+                984
             ]
         },
         {
@@ -23588,6 +24275,13 @@
             "key": "alltag",
             "ids": [
                 804
+            ]
+        },
+        {
+            "count": 1,
+            "key": "alsterufer",
+            "ids": [
+                997
             ]
         },
         {
@@ -23844,6 +24538,13 @@
         },
         {
             "count": 1,
+            "key": "bahnhof",
+            "ids": [
+                999
+            ]
+        },
+        {
+            "count": 1,
             "key": "bankkauffrau",
             "ids": [
                 593
@@ -23872,6 +24573,13 @@
         },
         {
             "count": 1,
+            "key": "bauarbeiten",
+            "ids": [
+                1004
+            ]
+        },
+        {
+            "count": 1,
             "key": "bauchschmerzen",
             "ids": [
                 836
@@ -23889,6 +24597,13 @@
             "key": "bedeutet",
             "ids": [
                 413
+            ]
+        },
+        {
+            "count": 1,
+            "key": "beeindruckend",
+            "ids": [
+                981
             ]
         },
         {
@@ -23984,6 +24699,13 @@
         },
         {
             "count": 1,
+            "key": "beschreiben",
+            "ids": [
+                999
+            ]
+        },
+        {
+            "count": 1,
             "key": "besch\u00e4ftigt",
             "ids": [
                 287
@@ -24008,13 +24730,6 @@
             "key": "besorgen",
             "ids": [
                 528
-            ]
-        },
-        {
-            "count": 1,
-            "key": "besserung",
-            "ids": [
-                87
             ]
         },
         {
@@ -24124,6 +24839,13 @@
         },
         {
             "count": 1,
+            "key": "brauchen",
+            "ids": [
+                1000
+            ]
+        },
+        {
+            "count": 1,
             "key": "brav",
             "ids": [
                 608
@@ -24134,6 +24856,13 @@
             "key": "briefumschlag",
             "ids": [
                 669
+            ]
+        },
+        {
+            "count": 1,
+            "key": "brille",
+            "ids": [
+                1002
             ]
         },
         {
@@ -24274,6 +25003,13 @@
             "key": "dabeihaben",
             "ids": [
                 963
+            ]
+        },
+        {
+            "count": 1,
+            "key": "dagegen",
+            "ids": [
+                1006
             ]
         },
         {
@@ -24435,6 +25171,13 @@
             "key": "dr\u00fccke",
             "ids": [
                 518
+            ]
+        },
+        {
+            "count": 1,
+            "key": "dunkel",
+            "ids": [
+                992
             ]
         },
         {
@@ -25034,13 +25777,6 @@
         },
         {
             "count": 1,
-            "key": "flugzeug",
-            "ids": [
-                141
-            ]
-        },
-        {
-            "count": 1,
             "key": "fluss",
             "ids": [
                 770
@@ -25279,13 +26015,6 @@
         },
         {
             "count": 1,
-            "key": "garage",
-            "ids": [
-                872
-            ]
-        },
-        {
-            "count": 1,
             "key": "garten",
             "ids": [
                 161
@@ -25443,6 +26172,13 @@
             "key": "gekriegt",
             "ids": [
                 922
+            ]
+        },
+        {
+            "count": 1,
+            "key": "gelandet",
+            "ids": [
+                988
             ]
         },
         {
@@ -25632,13 +26368,6 @@
             "key": "gespannt",
             "ids": [
                 211
-            ]
-        },
-        {
-            "count": 1,
-            "key": "gesperrt",
-            "ids": [
-                944
             ]
         },
         {
@@ -26056,20 +26785,6 @@
         },
         {
             "count": 1,
-            "key": "helfen",
-            "ids": [
-                14
-            ]
-        },
-        {
-            "count": 1,
-            "key": "hemd",
-            "ids": [
-                350
-            ]
-        },
-        {
-            "count": 1,
             "key": "herd",
             "ids": [
                 245
@@ -26101,6 +26816,13 @@
             "key": "herzhaftes",
             "ids": [
                 269
+            ]
+        },
+        {
+            "count": 1,
+            "key": "hilfe",
+            "ids": [
+                1000
             ]
         },
         {
@@ -26749,13 +27471,6 @@
         },
         {
             "count": 1,
-            "key": "kreuzung",
-            "ids": [
-                912
-            ]
-        },
-        {
-            "count": 1,
             "key": "kuchen",
             "ids": [
                 690
@@ -26801,6 +27516,13 @@
             "key": "k\u00fcndige",
             "ids": [
                 587
+            ]
+        },
+        {
+            "count": 1,
+            "key": "landet",
+            "ids": [
+                989
             ]
         },
         {
@@ -26976,13 +27698,6 @@
             "key": "liebt",
             "ids": [
                 693
-            ]
-        },
-        {
-            "count": 1,
-            "key": "links",
-            "ids": [
-                912
             ]
         },
         {
@@ -27211,13 +27926,6 @@
         },
         {
             "count": 1,
-            "key": "musste",
-            "ids": [
-                601
-            ]
-        },
-        {
-            "count": 1,
             "key": "m\u00f6bel",
             "ids": [
                 850
@@ -27235,6 +27943,13 @@
             "key": "m\u00f6glichst",
             "ids": [
                 356
+            ]
+        },
+        {
+            "count": 1,
+            "key": "m\u00fche",
+            "ids": [
+                982
             ]
         },
         {
@@ -27263,20 +27978,6 @@
             "key": "nachricht",
             "ids": [
                 357
-            ]
-        },
-        {
-            "count": 1,
-            "key": "nass",
-            "ids": [
-                740
-            ]
-        },
-        {
-            "count": 1,
-            "key": "nebel",
-            "ids": [
-                941
             ]
         },
         {
@@ -27351,6 +28052,13 @@
         },
         {
             "count": 1,
+            "key": "nordseek\u00fcste",
+            "ids": [
+                998
+            ]
+        },
+        {
+            "count": 1,
             "key": "noten",
             "ids": [
                 703
@@ -27368,13 +28076,6 @@
             "key": "nudel",
             "ids": [
                 158
-            ]
-        },
-        {
-            "count": 1,
-            "key": "n\u00e4chsten",
-            "ids": [
-                912
             ]
         },
         {
@@ -27473,13 +28174,6 @@
             "key": "pannen",
             "ids": [
                 963
-            ]
-        },
-        {
-            "count": 1,
-            "key": "parken",
-            "ids": [
-                971
             ]
         },
         {
@@ -27603,6 +28297,13 @@
         },
         {
             "count": 1,
+            "key": "programm",
+            "ids": [
+                1003
+            ]
+        },
+        {
+            "count": 1,
             "key": "programmierer",
             "ids": [
                 785
@@ -27655,6 +28356,13 @@
             "key": "rasiert",
             "ids": [
                 214
+            ]
+        },
+        {
+            "count": 1,
+            "key": "rau",
+            "ids": [
+                993
             ]
         },
         {
@@ -28016,6 +28724,13 @@
         },
         {
             "count": 1,
+            "key": "schwei\u00df",
+            "ids": [
+                996
+            ]
+        },
+        {
+            "count": 1,
             "key": "schweres",
             "ids": [
                 392
@@ -28033,6 +28748,13 @@
             "key": "schwimmen",
             "ids": [
                 382
+            ]
+        },
+        {
+            "count": 1,
+            "key": "schwitze",
+            "ids": [
+                995
             ]
         },
         {
@@ -28397,6 +29119,13 @@
             "key": "tages",
             "ids": [
                 785
+            ]
+        },
+        {
+            "count": 1,
+            "key": "tanken",
+            "ids": [
+                990
             ]
         },
         {
@@ -29031,6 +29760,13 @@
         },
         {
             "count": 1,
+            "key": "wal",
+            "ids": [
+                989
+            ]
+        },
+        {
+            "count": 1,
             "key": "wanderschuhe",
             "ids": [
                 884
@@ -29164,13 +29900,6 @@
         },
         {
             "count": 1,
-            "key": "werkzeug",
-            "ids": [
-                963
-            ]
-        },
-        {
-            "count": 1,
             "key": "wertvolles",
             "ids": [
                 783
@@ -29230,6 +29959,13 @@
             "key": "wohnt",
             "ids": [
                 136
+            ]
+        },
+        {
+            "count": 1,
+            "key": "wolke",
+            "ids": [
+                992
             ]
         },
         {
