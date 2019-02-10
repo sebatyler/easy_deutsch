@@ -21,12 +21,48 @@
 </head>
 <body>
 <script>
-    var msg = new SpeechSynthesisUtterance();
+    const synth = window.speechSynthesis;
+    const msg = new SpeechSynthesisUtterance();
     msg.lang = 'de-DE';
-    msg.rate = 0.9;
-    function play(text) {
+    msg.rate = 0.8;
+
+    let isStop = false;
+    let isRandomPlaying = false;
+
+    msg.addEventListener('end', function(event) {
+        if (isRandomPlaying) randomPlay(false);
+    });
+
+    function play(sentence, id = undefined) {
+        if (synth.speaking) return;
+        const text = sentence.getAttribute('data-de');
         msg.text = text;
-        speechSynthesis.speak(msg);
+
+        const speaking = document.getElementById('speaking');
+        if (id === undefined)
+            speaking.innerText = '';
+        else {
+            speaking.innerText = "" + (id + 1) + ". " + text;
+            speaking.parentNode.href = "#sentence" + (id + 1);
+        }
+        synth.speak(msg);
+    }
+
+    function randomPlay(start = true) {
+        if (start) {
+            isRandomPlaying = true;
+            isStop = false;
+        }
+        if (isStop || !isRandomPlaying || synth.speaking) return;
+        const sentences = document.getElementsByClassName('sentence');
+        const id = parseInt(Math.random() * sentences.length);
+        const sentence = sentences[id];
+        play(sentence, id);
+    }
+
+    function stop() {
+        synth.cancel();
+        isStop = true;
     }
 </script>
 
@@ -57,10 +93,19 @@
             <div class="card" id="examples" style="width: 100%;">
                 <div class="card-body">
                     <h5 class="card-title">Top sentences</h5>
+                    <div>
+                        <button type="button" class="btn btn-sm" onclick="randomPlay()">
+                            <i class="fas fa-play-circle">Random</i>
+                        </button>
+                        <button type="button" class="btn btn-sm" onclick="stop()">
+                            <i class="fas fa-stop-circle"></i>
+                        </button>
+                        <a href="#"><div id="speaking"></div></a>
+                    </div>
                     <ol>
                         {% for data in sentences %}
-                            <li>
-                                <button type="button" class="btn btn-sm" onclick="play('{{ data.de|escapejs }}');">
+                            <li id="sentence{{ forloop.counter }}" class="sentence" data-de="{{ data.de }}">
+                                <button type="button" class="btn btn-sm" onclick="play(this.parentNode);">
                                     <i class="fas fa-play-circle"></i>
                                 </button>
                                 {% if data.de_highlight %}
