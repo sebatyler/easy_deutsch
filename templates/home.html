@@ -30,7 +30,7 @@
     let isRandomPlaying = false;
 
     msg.addEventListener('end', function(event) {
-        if (isRandomPlaying) randomPlay(false);
+        if (isRandomPlaying) setTimeout(randomPlay, 500, false);
     });
 
     function play(sentence, id = undefined) {
@@ -104,7 +104,8 @@
                     </div>
                     <ol>
                         {% for data in sentences %}
-                            <li id="sentence{{ forloop.counter }}" class="sentence" data-de="{{ data.de }}">
+                            <li id="sentence{{ forloop.counter }}" class="sentence"
+                                data-de="{{ data.de }}" data-rest="{{ data.rest }}">
                                 <button type="button" class="btn btn-sm" onclick="play(this.parentNode);">
                                     <i class="fas fa-play-circle"></i>
                                 </button>
