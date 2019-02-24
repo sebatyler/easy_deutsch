@@ -34,11 +34,28 @@
         if (isRandomPlaying) setTimeout(randomPlay, 700, false);
     });
 
-    function play(sentence, lang = 'de-DE') {
+    function play(sentence, id = undefined) {
         if (synth.speaking) return;
-        msg.text = sentence.getAttribute('data-sentence');
+        const text = sentence.getAttribute('data-sentence');
+        const lang = sentence.getAttribute('data-lang');
+        msg.text = text;
         msg.lang = lang;
+
+        const speaking = document.getElementById('speaking');
+        speaking.innerText = lang + " - " + text;
         synth.speak(msg);
+    }
+
+    function randomPlay(start = true) {
+        if (start) {
+            isRandomPlaying = true;
+            isStop = false;
+        }
+        if (isStop || !isRandomPlaying || synth.speaking) return;
+        const sentences = document.getElementsByClassName('sentence');
+        const id = parseInt(Math.random() * sentences.length);
+        const sentence = sentences[id];
+        play(sentence, id);
     }
 
     function stop() {
@@ -78,8 +95,8 @@
                     <ul>
                         {% for lang in languages %}
                             <li id="sentence{{ forloop.counter }}" class="sentence"
-                                data-sentence="{{ translations|lookup:lang }}">
-                                <button type="button" class="btn btn-sm" onclick="play(this.parentNode, '{{ lang }}');">
+                                data-sentence="{{ translations|lookup:lang }}" data-lang="{{ lang }}">
+                                <button type="button" class="btn btn-sm" onclick="play(this.parentNode);">
                                     <i class="fas fa-play-circle"></i>
                                 </button>
                                 {{ lang }} - {{ translations|lookup:lang }}
