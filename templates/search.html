@@ -73,6 +73,18 @@
                                     {{ result.1 }}
                                 </td>
                                 <td>{{ result.2 }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.3|escapejs }}', 'es-ES');">
+                                        <i class="fas fa-play-circle"></i>
+                                    </button>
+                                    {{ result.3 }}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.4|escapejs }}', 'fr-FR');">
+                                        <i class="fas fa-play-circle"></i>
+                                    </button>
+                                    {{ result.4 }}
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>

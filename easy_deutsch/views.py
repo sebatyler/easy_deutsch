@@ -29,12 +29,12 @@ def get_context(word):
     word_info = dict(word=search_term, en=[], de=[])
 
     tables = result.select('div > table')
-    word_info['titles'] = ['english', 'deutsch', 'korean']
+    word_info['titles'] = ['english', 'deutsch', 'korean', 'spanish', 'french']
     word_info['results'] = []
 
     for table in tables:
         for entry in table.select('tbody > tr[data-dz-ui="dictentry"]'):
-            row = [''] * 3
+            row = [''] * 5
             for i, lang in enumerate(['en', 'de']):
                 data = entry.select_one(f'td[lang="{lang}"]')
                 if data:
@@ -46,22 +46,20 @@ def get_context(word):
 
     # example sentences
     for entry in result.select('[data-dz-name="example"] > table > tbody > tr[data-dz-ui="dictentry"]'):
-        row = [''] * 3
+        row = [''] * 5
         for i, lang in enumerate(['en', 'de']):
             data = entry.select_one(f'td[lang="{lang}"]')
             if data:
                 row[i] = data.text
         word_info['results'].append(row)
 
-    # korean
+    # korean, spanish, french
     if word_info['results']:
         translator = Translator()
-        results = run_async(
-            lambda t: translator.translate(text=t, src='en', dest='ko'),
-            py_.map(word_info['results'], 0)
-        )
-        for i, korean in enumerate(results):
-            word_info['results'][i][-1] = korean.text
+        for i, lang in enumerate(['ko', 'es', 'fr']):
+            results = translator.translate(py_.map(word_info['results'], 0), src='en', dest=lang)
+            for j, res in enumerate(results):
+                word_info['results'][j][2 + i] = res.text
 
     # TODO: search_term에 article 붙이기
     # https://pixabay.com/api/docs/
