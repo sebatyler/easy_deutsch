@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load bootstrap4 %}
+{% load custom %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,31 +34,11 @@
         if (isRandomPlaying) setTimeout(randomPlay, 700, false);
     });
 
-    function play(sentence, id = undefined) {
+    function play(sentence, lang = 'de-DE') {
         if (synth.speaking) return;
-        const text = sentence.getAttribute('data-de');
-        msg.text = text;
-
-        const speaking = document.getElementById('speaking');
-        if (id === undefined)
-            speaking.innerText = '';
-        else {
-            speaking.innerText = "" + (id + 1) + ". " + text;
-            speaking.parentNode.href = "#sentence" + (id + 1);
-        }
+        msg.text = sentence.getAttribute('data-sentence');
+        msg.lang = lang;
         synth.speak(msg);
-    }
-
-    function randomPlay(start = true) {
-        if (start) {
-            isRandomPlaying = true;
-            isStop = false;
-        }
-        if (isStop || !isRandomPlaying || synth.speaking) return;
-        const sentences = document.getElementsByClassName('sentence');
-        const id = parseInt(Math.random() * sentences.length);
-        const sentence = sentences[id];
-        play(sentence, id);
     }
 
     function stop() {
@@ -75,51 +56,36 @@
             <a class="nav-link" href="#examples">Examples</a>
         </li>
     </ul>
+    <form class="form-inline">
+        <input class="form-control" type="search" name="de"
+               value="{{ word_info.word }}" placeholder="satz" autofocus accesskey="s" />
+        <input class="form-control" type="submit" value="search" />
+    </form>
     <div class="row">
-        <div class="col-sm-3">
-            <div class="card" style="width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">Top words</h5>
-                    <ol>
-                        {% for data in token_data %}
-                            <li><a href="{% url 'search' %}?word={{ data.key }}">{{ data.key|safe }}</a> |
-                                <a href="?word={{ data.key }}">examples</a></li>
-                        {% endfor %}
-                    </ol>
-                </div>
-            </div>
-        </div>
         <div class="col">
             <div class="card" id="examples" style="width: 100%;">
                 <div class="card-body">
-                    <h5 class="card-title">Top sentences</h5>
+                    <h5 class="card-title">Translations</h5>
                     <div>
                         <button type="button" class="btn btn-sm" onclick="randomPlay()">
                             <i class="fas fa-play-circle">Random</i>
                         </button>
                         <button type="button" class="btn btn-sm" onclick="stop()">
-                            <i class="fas fa-stop-circle"></i>
+                            <i class="fas fa-stop-circle">Stop</i>
                         </button>
                         <a href="#"><div id="speaking"></div></a>
                     </div>
-                    <ol>
-                        {% for data in sentences %}
+                    <ul>
+                        {% for lang in languages %}
                             <li id="sentence{{ forloop.counter }}" class="sentence"
-                                data-de="{{ data.de }}" data-rest="{{ data.rest }}">
-                                <button type="button" class="btn btn-sm" onclick="play(this.parentNode);">
+                                data-sentence="{{ translations|lookup:lang }}">
+                                <button type="button" class="btn btn-sm" onclick="play(this.parentNode, '{{ lang }}');">
                                     <i class="fas fa-play-circle"></i>
                                 </button>
-                                <a href="{% url 'sentence' %}?de={{ data.de|urlencode }}">
-                                    {% if data.de_highlight %}
-                                        {{ data.de_highlight|safe }}
-                                    {% else %}
-                                        {{ data.de }}
-                                    {% endif %}
-                                </a>
-                                / {{ data.rest }}
+                                {{ lang }} - {{ translations|lookup:lang }}
                             </li>
                         {% endfor %}
-                    </ol>
+                    </ul>
                 </div>
             </div>
         </div>

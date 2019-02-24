@@ -8,8 +8,6 @@ from django.shortcuts import render
 
 from py_translator import Translator
 
-from .async import run_async
-
 
 def get_context(word):
     if not word:
@@ -93,3 +91,18 @@ def home(request):
 
     data['sentences'] = py_.order_by(data['data'], ['-count'])
     return render(request, 'home.html', data)
+
+
+def sentence(request):
+    de = request.GET.get('de')
+    data = dict(languages=['de', 'en', 'es', 'fr', 'ko'], translations=dict(de=de))
+
+    if de:
+        translator = Translator()
+        for lang in data['languages'][1:]:
+            src = 'de' if lang == 'en' else 'en'
+            text = data['translations'][src]
+            res = translator.translate(text, src=src, dest=lang)
+            data['translations'][lang] = res.text
+
+    return render(request, 'sentence.html', data)
