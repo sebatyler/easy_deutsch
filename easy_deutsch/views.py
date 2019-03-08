@@ -8,6 +8,14 @@ from django.shortcuts import render
 
 from py_translator import Translator
 
+from .async import run_async
+
+
+def translate(words, languages=None):
+    languages = languages or ('ko', 'es', 'fr')
+    translator = Translator()
+    return run_async(lambda l: translator.translate(words, src='en', dest=l), languages)
+
 
 def get_context(word):
     if not word:
@@ -53,9 +61,10 @@ def get_context(word):
 
     # korean, spanish, french
     if word_info['results']:
-        translator = Translator()
-        for i, lang in enumerate(['ko', 'es', 'fr']):
-            results = translator.translate(py_.map(word_info['results'], 0), src='en', dest=lang)
+        languages = ('ko', 'es', 'fr')
+        result_list = translate(py_.map(word_info['results'], 0), languages)
+
+        for i, results in enumerate(result_list):
             for j, res in enumerate(results):
                 word_info['results'][j][2 + i] = res.text
 
@@ -94,15 +103,27 @@ def home(request):
 
 
 def sentence(request):
-    de = request.GET.get('de')
-    data = dict(languages=['de', 'en', 'es', 'fr', 'ko'], translations=dict(de=de))
+    de, en = py_.at(request.GET, 'de', 'en')
+    data = dict(
+        languages=['de', 'en', 'es', 'fr', 'ko'],
+        translations=dict(de=de, en=en),
+        query=dict(de=de, en=en)
+    )
+    translator = Translator()
 
     if de:
-        translator = Translator()
-        for lang in data['languages'][1:]:
-            src = 'de' if lang == 'en' else 'en'
-            text = data['translations'][src]
-            res = translator.translate(text, src=src, dest=lang)
-            data['translations'][lang] = res.text
+        text = translator.translate(de, src='de', dest='en').text
+        data['translations']['en'] = text
+    elif en:
+        text = translator.translate(en, src='en', dest='de').text
+        data['translations']['de'] = text
+
+    if de or en:
+        text = data['translations']['en']
+        results = run_async(lambda l: translator.translate(text, src='en', dest=l), data['languages'][2:])
+
+        for i, result in enumerate(results, 2):
+            lang = data['languages'][i]
+            data['translations'][lang] = result.text
 
     return render(request, 'sentence.html', data)

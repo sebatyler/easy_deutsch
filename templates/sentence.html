@@ -75,7 +75,9 @@
     </ul>
     <form class="form-inline">
         <input class="form-control" type="search" name="de"
-               value="{{ word_info.word }}" placeholder="satz" autofocus accesskey="s" />
+               value="{{ query.de|default:'' }}" placeholder="deutsch" autofocus accesskey="s" />
+        <input class="form-control" type="search" name="en"
+               value="{{ query.en|default:'' }}" placeholder="english" autofocus accesskey="s" />
         <input class="form-control" type="submit" value="search" />
     </form>
     <div class="row">
