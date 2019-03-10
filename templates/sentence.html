@@ -34,7 +34,7 @@
         if (isRandomPlaying) setTimeout(randomPlay, 700, false);
     });
 
-    function play(sentence, id = undefined) {
+    function play(sentence) {
         if (synth.speaking) return;
         const text = sentence.getAttribute('data-sentence');
         const lang = sentence.getAttribute('data-lang');
@@ -55,7 +55,7 @@
         const sentences = document.getElementsByClassName('sentence');
         const id = parseInt(Math.random() * sentences.length);
         const sentence = sentences[id];
-        play(sentence, id);
+        play(sentence);
     }
 
     function stop() {

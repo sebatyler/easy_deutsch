@@ -28,22 +28,34 @@
 
     let isStop = false;
     let isRandomPlaying = false;
+    let playCount = 0;
+    let playSentence;
+    let playId;
 
     msg.addEventListener('end', function(event) {
+        if (isStop) return;
+        if (playCount < 5) setTimeout(play, 700);
         if (isRandomPlaying) setTimeout(randomPlay, 700, false);
     });
 
-    function play(sentence, id = undefined) {
+    function play(sentence = undefined, id = undefined) {
         if (synth.speaking) return;
-        const text = sentence.getAttribute('data-de');
+        if (!!sentence) {
+            playCount = 0;
+            playSentence = sentence;
+            playId = id;
+        }
+        const text = playSentence.getAttribute('data-de');
         msg.text = text;
+        msg.rate = 0.5 + 0.1 * playCount;
+        playCount++;
 
         const speaking = document.getElementById('speaking');
-        if (id === undefined)
+        if (playId === undefined)
             speaking.innerText = '';
         else {
-            speaking.innerText = "" + (id + 1) + ". " + text;
-            speaking.parentNode.href = "#sentence" + (id + 1);
+            speaking.innerText = "" + (playId + 1) + ". " + text + " (" + Math.round(msg.rate * 100) + "%)";
+            speaking.parentNode.href = "#sentence" + (playId + 1);
         }
         synth.speak(msg);
     }
