@@ -75,10 +75,13 @@
     </ul>
     <form class="form-inline">
         <input class="form-control" type="search" name="de"
-               value="{{ query.de|default:'' }}" placeholder="deutsch" autofocus accesskey="s" />
+               placeholder="deutsch" autofocus accesskey="d" />
+        <input class="form-control" type="submit" value="translate" />
+    </form>
+    <form class="form-inline">
         <input class="form-control" type="search" name="en"
-               value="{{ query.en|default:'' }}" placeholder="english" autofocus accesskey="s" />
-        <input class="form-control" type="submit" value="search" />
+               placeholder="english" autofocus accesskey="e" />
+        <input class="form-control" type="submit" value="translate" />
     </form>
     <div class="row">
         <div class="col">
