@@ -94,23 +94,14 @@
         </li>
     </ul>
     <div class="row">
-        <div class="col-sm-3">
-            <div class="card" style="width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">Top words</h5>
-                    <ol>
-                        {% for data in token_data %}
-                            <li><a href="{% url 'search' %}?word={{ data.key }}">{{ data.key|safe }}</a> |
-                                <a href="?word={{ data.key }}">examples</a></li>
-                        {% endfor %}
-                    </ol>
-                </div>
-            </div>
-        </div>
         <div class="col">
             <div class="card" id="examples" style="width: 100%;">
                 <div class="card-body">
-                    <h5 class="card-title">Top sentences</h5>
+                    <h5 class="card-title">Sentences ({{ sentences|length }})
+                        ordering:
+                        <a href="?order=id">Id</a>
+                        / <a href="?order=count">Count</a>
+                    </h5>
                     <div>
                         <button type="button" class="btn btn-sm" onclick="randomPlay()">
                             <i class="fas fa-play-circle">Random</i>
@@ -136,6 +127,19 @@
                                 </a>
                                 / {{ data.rest }}
                             </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Top words</h5>
+                    <ol>
+                        {% for data in token_data %}
+                            <li><a href="{% url 'search' %}?word={{ data.key }}">{{ data.key|safe }}</a> |
+                                <a href="?word={{ data.key }}">examples</a></li>
                         {% endfor %}
                     </ol>
                 </div>

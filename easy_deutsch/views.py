@@ -85,6 +85,7 @@ def search(request):
 
 def home(request):
     word = request.GET.get('word')
+    order = request.GET.get('order') or 'id'
 
     with open('data.json') as f:
         data = json.load(f)
@@ -98,7 +99,13 @@ def home(request):
                 lambda s: f"<font color='red' class='font-weight-bold'>{s}</font>" if s.lower() == word else s
             ).join(' ').value()
 
-    data['sentences'] = py_.order_by(data['data'], ['-count'])
+    order = "-count" if order == "count" else "id"
+    sentences = py_.order_by(data['data'], [order])
+
+    offset = int(request.GET.get('offset') or 0)
+    limit = int(request.GET.get('limit') or len(sentences))
+    data['sentences'] = sentences[offset:offset + limit]
+
     return render(request, 'home.html', data)
 
 
