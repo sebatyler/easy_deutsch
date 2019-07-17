@@ -33,7 +33,7 @@
     let playId;
 
     msg.addEventListener('end', function(event) {
-        if (isStop) return;
+        if (isStop || synth.speaking) return;
         if (playCount < 5) setTimeout(play, 700);
         if (isRandomPlaying) setTimeout(randomPlay, 700, false);
     });
@@ -59,6 +59,8 @@
         msg.text = deText;
         synth.speak(msg);
 
+        /* english faster */
+        msg.rate += 0.1;
         msg.lang = 'en-US';
         msg.text = enText;
         synth.speak(msg);
