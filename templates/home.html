@@ -45,18 +45,22 @@
             playSentence = sentence;
             playId = id;
         }
-        const text = playSentence.getAttribute('data-de');
-        msg.text = text;
         msg.rate = 0.5 + 0.1 * playCount;
         playCount++;
 
+        const deText = playSentence.getAttribute('data-de');
+        const enText = playSentence.getAttribute('data-en');
         const speaking = document.getElementById('speaking');
-        if (playId === undefined)
-            speaking.innerText = '';
-        else {
-            speaking.innerText = "" + (playId + 1) + ". " + text + " (" + Math.round(msg.rate * 100) + "%)";
-            speaking.parentNode.href = "#sentence" + (playId + 1);
-        }
+        const prefix = playId === undefined ? '' : ('' + (playId + 1) + '. ');
+        speaking.innerText = prefix + deText + " (" + Math.round(msg.rate * 100) + "%)" + '\nen: ' + enText;
+        speaking.parentNode.href = "#sentence" + (playId + 1);
+
+        msg.lang = 'de-DE';
+        msg.text = deText;
+        synth.speak(msg);
+
+        msg.lang = 'en-US';
+        msg.text = enText;
         synth.speak(msg);
     }
 
@@ -114,7 +118,7 @@
                     <ol>
                         {% for data in sentences %}
                             <li id="sentence{{ forloop.counter }}" class="sentence"
-                                data-de="{{ data.de }}" data-rest="{{ data.rest }}">
+                                data-de="{{ data.de }}" data-en="{{ data.rest.0 }}">
                                 <button type="button" class="btn btn-sm" onclick="play(this.parentNode);">
                                     <i class="fas fa-play-circle"></i>
                                 </button>
