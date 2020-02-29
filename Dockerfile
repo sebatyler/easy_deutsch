@@ -12,7 +12,7 @@ RUN echo ". /var/task/venv/bin/activate" >> $BASH_ENV
 
 SHELL ["/bin/bash", "-c"]
 
-RUN pip install zappa==0.47.1
+RUN pip install zappa==0.50.0
 
 ADD requirements.txt ./
 RUN pip install -r requirements.txt
