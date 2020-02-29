@@ -21,9 +21,14 @@
 </head>
 <body>
 <script>
-    var msg = new SpeechSynthesisUtterance();
+    const synth = window.speechSynthesis;
+    const voices = synth.getVoices();
+    const msg = new SpeechSynthesisUtterance();
     msg.rate = 0.9;
+
     function play(text, lang = 'de-DE') {
+        const voice = voices.find(voice => voice.lang === lang);
+        if (voice) msg.voice = voice;
         msg.text = text;
         msg.lang = lang;
         speechSynthesis.speak(msg);
