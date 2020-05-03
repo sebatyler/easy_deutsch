@@ -2,13 +2,11 @@ import json
 
 import requests
 from bs4 import BeautifulSoup
+from django.shortcuts import render
+from honey.asyncio import run_async
 from pydash import py_
 
-from django.shortcuts import render
-
 from py_translator import Translator
-
-from .async import run_async
 
 
 def translate(words, languages=None):
