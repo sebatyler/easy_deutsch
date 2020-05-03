@@ -7,6 +7,7 @@
 -e git+git://github.com/sebatyler/py_translator@master#egg=py_translator
 bcrypt==3.1.7             # via paramiko
 beautifulsoup4==4.6.3
+bepro-python-honey==0.0.1.6
 certifi==2019.11.28       # via requests
 cffi==1.14.0              # via bcrypt, cryptography, pynacl
 chardet==3.0.4            # via requests

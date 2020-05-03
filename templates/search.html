@@ -1,127 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load bootstrap4 %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>easy Deutsch</title>
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    {% bootstrap_messages %}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-          crossorigin="anonymous">
-    <!--
-    <style>
-        html {
-            font-size: 20px;
-        }
-    </style>
-    -->
-</head>
-<body>
-<script>
-    const synth = window.speechSynthesis;
-    const voices = synth.getVoices();
-    const msg = new SpeechSynthesisUtterance();
-    msg.rate = 0.9;
+{% extends 'base.html' %}
 
-    function play(text, lang = 'de-DE') {
-        const voice = voices.find(voice => voice.lang === lang);
-        if (voice) msg.voice = voice;
-        msg.text = text;
-        msg.lang = lang;
-        speechSynthesis.speak(msg);
-    }
-</script>
-
-<div class="container">
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'sentence' %}">Sentence</a>
-        </li>
-        {% if word_info %}
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}?word={{ word_info.word }}">Examples</a>
-        </li>
-        {% endif %}
-    </ul>
+{% block nav_extra %}
     <form class="form-inline">
         <input class="form-control" type="search" name="word"
                value="{{ word_info.word }}" placeholder="word" autofocus accesskey="s" />
         <input class="form-control" type="submit" value="search" />
+        {% if word_info %}
+            <a class="nav-link" href="{% url 'home' %}?word={{ word_info.word }}">Examples</a>
+        {% endif %}
     </form>
-</div>
-{% if word_info %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="list-group">
-                    <table class="table table-bordered">
-                        <tr>
-                            {% for title in word_info.titles %}
-                                <th>{{ title }}</th>
-                            {% endfor %}
-                        </tr>
-                        {% for result in word_info.results %}
+{% endblock %}
+
+{% block body %}
+    <script>
+        const synth = window.speechSynthesis;
+        const voices = synth.getVoices();
+        const msg = new SpeechSynthesisUtterance();
+        msg.rate = 0.9;
+
+        function play(text, lang = 'de-DE') {
+            const voice = voices.find(voice => voice.lang === lang);
+            if (voice) msg.voice = voice;
+            msg.text = text;
+            msg.lang = lang;
+            speechSynthesis.speak(msg);
+        }
+    </script>
+
+    {% if word_info %}
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="list-group">
+                        <table class="table table-bordered">
                             <tr>
-                                <td>
-                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.0|escapejs }}', 'en-US');">
-                                        <i class="fas fa-play-circle"></i>
-                                    </button>
-                                    {{ result.0 }}
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.1|escapejs }}');">
-                                        <i class="fas fa-play-circle"></i>
-                                    </button>
-                                    {{ result.1 }}
-                                </td>
-                                <td>{{ result.2 }}</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.3|escapejs }}', 'es-ES');">
-                                        <i class="fas fa-play-circle"></i>
-                                    </button>
-                                    {{ result.3 }}
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm" onclick="play('{{ result.4|escapejs }}', 'fr-FR');">
-                                        <i class="fas fa-play-circle"></i>
-                                    </button>
-                                    {{ result.4 }}
-                                </td>
+                                {% for title in word_info.titles %}
+                                    <th>{{ title }}</th>
+                                {% endfor %}
                             </tr>
-                        {% endfor %}
-                    </table>
+                            {% for result in word_info.results %}
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-sm" onclick="play('{{ result.0|escapejs }}', 'en-US');">
+                                            <i class="fas fa-play-circle"></i>
+                                        </button>
+                                        {{ result.0 }}
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm" onclick="play('{{ result.1|escapejs }}');">
+                                            <i class="fas fa-play-circle"></i>
+                                        </button>
+                                        {{ result.1 }}
+                                    </td>
+                                    <td>{{ result.2 }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm" onclick="play('{{ result.3|escapejs }}', 'es-ES');">
+                                            <i class="fas fa-play-circle"></i>
+                                        </button>
+                                        {{ result.3 }}
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm" onclick="play('{{ result.4|escapejs }}', 'fr-FR');">
+                                            <i class="fas fa-play-circle"></i>
+                                        </button>
+                                        {{ result.4 }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for item in word_info.images %}
+                        <div class="col-4">
+                            <a href="{{ item.large }}" target="_blank"><img class="img-fluid" src="{{ item.large }}" /></a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-            <div class="row">
-                {% for item in word_info.images %}
-                    <div class="col-4">
-                        <a href="{{ item.large }}" target="_blank"><img class="img-fluid" src="{{ item.large }}" /></a>
-                    </div>
-                {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if suggestions %}
+        <div class="container">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Suggestions</h5>
+                    <ul>
+                        {% for item in suggestions %}
+                            <li><a href="{{ item.link }}">{{ item.word|safe }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-{% endif %}
-
-{% if suggestions %}
-<div class="container">
-    <div class="card" style="width: 100%;">
-        <div class="card-body">
-            <h5 class="card-title">Suggestions</h5>
-            <ul>
-                {% for item in suggestions %}
-                    <li><a href="{{ item.link }}">{{ item.word|safe }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
-{% endif %}
-</body>
-</html>
+    {% endif %}
+{% endblock %}
