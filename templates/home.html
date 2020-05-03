@@ -1,172 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load bootstrap4 %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>easy Deutsch</title>
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    {% bootstrap_messages %}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-          crossorigin="anonymous">
-    <!--
-    <style>
-        html {
-            font-size: 20px;
-        }
-    </style>
-    -->
-</head>
-<body>
-<script>
-    const synth = window.speechSynthesis;
-    const msg = new SpeechSynthesisUtterance();
-    const voices = synth.getVoices();
-    const deVoice = voices.find(voice => voice.lang === 'de-DE');
-    const enVoice = voices.find(voice => voice.lang === 'en-US');
+{% extends 'base.html' %}
 
-    if (deVoice) msg.voice = deVoice;
-    msg.lang = 'de-DE';
-    msg.rate = 0.7;
-
-    let isStop = false;
-    let isRandomPlaying = false;
-    let playCount = 0;
-    let playSentence;
-    let playId;
-
-    msg.addEventListener('end', function(event) {
-        if (isStop || synth.speaking) return;
-        if (playCount < 5) setTimeout(play, 700);
-        if (isRandomPlaying) setTimeout(randomPlay, 700, false);
-    });
-
-    function play(sentence = undefined, id = undefined) {
-        if (synth.speaking) return;
-        if (!!sentence) {
-            playCount = 0;
-            playSentence = sentence;
-            playId = id;
-        }
-        msg.rate = 0.5 + 0.1 * playCount;
-        playCount++;
-
-        const deText = playSentence.getAttribute('data-de');
-        const enText = playSentence.getAttribute('data-en');
-        const restText = playSentence.getAttribute('data-rest');
-        const speaking = document.getElementById('speaking');
-        const prefix = playId === undefined ? '' : ('' + (playId + 1) + '. ');
-        speaking.innerText = prefix + deText + " (" + Math.round(msg.rate * 100) + "%)" + '\n-> ' + enText + ' ' + restText;
-        speaking.parentNode.href = "#sentence" + (playId + 1);
+{% block body %}
+    <script>
+        const synth = window.speechSynthesis;
+        const msg = new SpeechSynthesisUtterance();
+        const voices = synth.getVoices();
+        const deVoice = voices.find(voice => voice.lang === 'de-DE');
+        const enVoice = voices.find(voice => voice.lang === 'en-US');
 
         if (deVoice) msg.voice = deVoice;
         msg.lang = 'de-DE';
-        msg.text = deText;
-        synth.speak(msg);
+        msg.rate = 0.7;
 
-        /* english faster */
-        msg.rate = msg.rate > 0.8 ? msg.rate + 0.1 : 0.8;
+        let isStop = false;
+        let isRandomPlaying = false;
+        let playCount = 0;
+        let playSentence;
+        let playId;
 
-        if (enVoice) msg.voice = enVoice;
-        msg.lang = 'en-US';
-        msg.text = enText;
-        synth.speak(msg);
-    }
+        msg.addEventListener('end', function(event) {
+            if (isStop || synth.speaking) return;
+            if (playCount < 5) setTimeout(play, 700);
+            if (isRandomPlaying) setTimeout(randomPlay, 700, false);
+        });
 
-    function randomPlay(start = true) {
-        if (start) {
-            isRandomPlaying = true;
-            isStop = false;
+        function play(sentence = undefined, id = undefined) {
+            if (synth.speaking) return;
+            if (!!sentence) {
+                playCount = 0;
+                playSentence = sentence;
+                playId = id;
+            }
+            msg.rate = 0.5 + 0.1 * playCount;
+            playCount++;
+
+            const deText = playSentence.getAttribute('data-de');
+            const enText = playSentence.getAttribute('data-en');
+            const restText = playSentence.getAttribute('data-rest');
+            const speaking = document.getElementById('speaking');
+            const prefix = playId === undefined ? '' : ('' + (playId + 1) + '. ');
+            speaking.innerText = prefix + deText + " (" + Math.round(msg.rate * 100) + "%)" + '\n-> ' + enText + ' ' + restText;
+            speaking.parentNode.href = "#sentence" + (playId + 1);
+
+            if (deVoice) msg.voice = deVoice;
+            msg.lang = 'de-DE';
+            msg.text = deText;
+            synth.speak(msg);
+
+            /* english faster */
+            msg.rate = msg.rate > 0.8 ? msg.rate + 0.1 : 0.8;
+
+            if (enVoice) msg.voice = enVoice;
+            msg.lang = 'en-US';
+            msg.text = enText;
+            synth.speak(msg);
         }
-        if (isStop || !isRandomPlaying || synth.speaking) return;
-        const sentences = document.getElementsByClassName('sentence');
-        const id = parseInt(Math.random() * sentences.length);
-        const sentence = sentences[id];
-        play(sentence, id);
-    }
 
-    function onePlay(sentence) {
-        isRandomPlaying = false;
-        isStop = false;
-        play(sentence);
-    }
+        function randomPlay(start = true) {
+            if (start) {
+                isRandomPlaying = true;
+                isStop = false;
+            }
+            if (isStop || !isRandomPlaying || synth.speaking) return;
+            const sentences = document.getElementsByClassName('sentence');
+            const id = parseInt(Math.random() * sentences.length);
+            const sentence = sentences[id];
+            play(sentence, id);
+        }
 
-    function stop() {
-        synth.cancel();
-        isStop = true;
-    }
-</script>
+        function onePlay(sentence) {
+            isRandomPlaying = false;
+            isStop = false;
+            play(sentence);
+        }
 
-<div class="container">
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'search' %}">Search</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'sentence' %}">Sentence</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#examples">Examples</a>
-        </li>
-    </ul>
-    <div class="row">
-        <div class="col">
-            <div class="card" id="examples" style="width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">Sentences ({{ sentences|length }})
-                        ordering:
-                        <a href="?order=id">Id</a>
-                        / <a href="?order=count">Count</a>
-                    </h5>
-                    <div>
-                        <button type="button" class="btn btn-sm" onclick="randomPlay()">
-                            <i class="fas fa-play-circle">Random</i>
-                        </button>
-                        <button type="button" class="btn btn-sm" onclick="stop()">
-                            <i class="fas fa-stop-circle"></i>
-                        </button>
-                        <a href="#"><div id="speaking"></div></a>
+        function stop() {
+            synth.cancel();
+            isStop = true;
+        }
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card" id="examples" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sentences ({{ sentences|length }})
+                            ordering:
+                            <a href="?order=id">Id</a>
+                            / <a href="?order=count">Count</a>
+                        </h5>
+                        <div>
+                            <button type="button" class="btn btn-sm" onclick="randomPlay()">
+                                <i class="fas fa-play-circle">Random</i>
+                            </button>
+                            <button type="button" class="btn btn-sm" onclick="stop()">
+                                <i class="fas fa-stop-circle"></i>
+                            </button>
+                            <a href="#"><div id="speaking"></div></a>
+                        </div>
+                        <ol>
+                            {% for data in sentences %}
+                                <li id="sentence{{ forloop.counter }}" class="sentence"
+                                    data-de="{{ data.de }}" data-en="{{ data.rest.0 }}" data-rest="{{ data.rest.1 }}">
+                                    <button type="button" class="btn btn-sm" onclick="onePlay(this.parentNode);">
+                                        <i class="fas fa-play-circle"></i>
+                                    </button>
+                                    <a href="{% url 'sentence' %}?de={{ data.de|urlencode }}">
+                                        {% if data.de_highlight %}
+                                            {{ data.de_highlight|safe }}
+                                        {% else %}
+                                            {{ data.de }}
+                                        {% endif %}
+                                    </a>
+                                    / {{ data.rest }}
+                                </li>
+                            {% endfor %}
+                        </ol>
                     </div>
-                    <ol>
-                        {% for data in sentences %}
-                            <li id="sentence{{ forloop.counter }}" class="sentence"
-                                data-de="{{ data.de }}" data-en="{{ data.rest.0 }}" data-rest="{{ data.rest.1 }}">
-                                <button type="button" class="btn btn-sm" onclick="onePlay(this.parentNode);">
-                                    <i class="fas fa-play-circle"></i>
-                                </button>
-                                <a href="{% url 'sentence' %}?de={{ data.de|urlencode }}">
-                                    {% if data.de_highlight %}
-                                        {{ data.de_highlight|safe }}
-                                    {% else %}
-                                        {{ data.de }}
-                                    {% endif %}
-                                </a>
-                                / {{ data.rest }}
-                            </li>
-                        {% endfor %}
-                    </ol>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">Top words</h5>
-                    <ol>
-                        {% for data in token_data %}
-                            <li><a href="{% url 'search' %}?word={{ data.key }}">{{ data.key|safe }}</a> |
-                                <a href="?word={{ data.key }}">examples</a></li>
-                        {% endfor %}
-                    </ol>
+            <div class="col-sm-3">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Top words</h5>
+                        <ol>
+                            {% for data in token_data %}
+                                <li><a href="{% url 'search' %}?word={{ data.key }}">{{ data.key|safe }}</a> |
+                                    <a href="?word={{ data.key }}">examples</a></li>
+                            {% endfor %}
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</body>
-</html>
+{% endblock %}
