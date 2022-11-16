@@ -82,7 +82,7 @@ requests==2.23.0
     # via
     #   gspread
     #   py-translator
-rsa==4.0
+rsa==4.7
     # via oauth2client
 six==1.14.0
     # via
