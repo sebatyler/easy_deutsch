@@ -7,6 +7,7 @@ from honey.asyncio import run_async
 from pydash import py_
 
 from py_translator import Translator
+from random import randint
 
 
 def translate(words, languages=None):
@@ -132,3 +133,13 @@ def sentence(request):
             data['translations'][lang] = result.text
 
     return render(request, 'sentence.html', data)
+
+
+def random(request):
+    with open('data.json') as f:
+        data = json.load(f)
+
+    data = data["data"]
+    idx = randint(0, len(data))
+
+    return render(request, 'random.html', data[idx])

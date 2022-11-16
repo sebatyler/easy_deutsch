@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', views.search, name='search'),
     path('sentence/', views.sentence, name='sentence'),
+    path('random/', views.random, name='random'),
 ]
