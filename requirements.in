@@ -17,3 +17,5 @@ bepro-python-honey
 
 # deployment
 zappa==0.56.1
+fabric==2.7.1
+awslambdaric==2.0.4
