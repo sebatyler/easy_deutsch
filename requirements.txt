@@ -30,7 +30,7 @@ botocore==1.29.45
     #   s3transfer
 build==0.9.0
     # via pip-tools
-certifi==2019.11.28
+certifi==2022.12.7
     # via requests
 cffi==1.15.1
     # via
