@@ -81,7 +81,7 @@ def _create_ecr_repo(c):
     aws_default = f"aws --output json ecr"
     local(f"{aws_default} create-repository --repository-name {IMAGE} --image-scanning-configuration scanOnPush=true")
 
-    set_ecr_lifecycle(c)
+    set_ecr_lifecycle(c, force=False)
 
 
 def _deploy_with_ecr(c, update=True):
@@ -120,13 +120,13 @@ def _deploy_with_ecr(c, update=True):
 
 
 @task
-def set_ecr_lifecycle(c):
+def set_ecr_lifecycle(c, force=True):
     """set Elastic Container Registry lifecycle"""
     aws_default = f"aws --output json ecr"
 
     result = local(f"{aws_default} get-lifecycle-policy --repository-name {IMAGE}", warn=True)
 
-    if result.exited != 0:
+    if force or result.exited != 0:
         local(
             f"{aws_default} put-lifecycle-policy --repository-name {IMAGE} --lifecycle-policy-text file://./deploy/ecr_lifecycle_policy.json"
         )

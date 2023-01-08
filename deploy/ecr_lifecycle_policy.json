@@ -2,11 +2,11 @@
   "rules": [
     {
       "rulePriority": 1,
-      "description": "Keep only 3 untagged images, expire all others",
+      "description": "Keep only 1 untagged image, expire all others",
       "selection": {
         "tagStatus": "untagged",
         "countType": "imageCountMoreThan",
-        "countNumber": 3
+        "countNumber": 1
       },
       "action": {
         "type": "expire"
