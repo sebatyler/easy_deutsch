@@ -1,13 +1,33 @@
-from fabric.api import local
+import inspect
+import json
+from os import environ
 
-IMAGE = 'easy_deutsch/zappa'
-ACCESS_KEY = local("aws --profile sebatyler configure get aws_access_key_id", capture=True)
-SECRET_KEY = local("aws --profile sebatyler configure get aws_secret_access_key", capture=True)
+import dotenv
+from fabric import task
+from invoke import run as local
+
+# TODO: upgrade invoke to 2.0
+if not hasattr(inspect, "getargspec"):
+    inspect.getargspec = inspect.getfullargspec
+
+
+dotenv.read_dotenv()
+
+IMAGE = "easy-deutsch-aws"
+STAGE = "prod"
 
 is_built = False
 
+environ.update(
+    # docker pip caching
+    DOCKER_BUILDKIT="1",
+    # bypass python version check
+    ZAPPA_RUNNING_IN_DOCKER="True",
+)
 
-def nb():
+
+@task
+def nb(c):
     """
     no build - skip build
     """
@@ -15,102 +35,181 @@ def nb():
     is_built = True
 
 
-def build():
+@task
+def build(c):
     """
     build docker image for zappa
     """
     global is_built
     if not is_built:
-        local(f"docker build -t {IMAGE} .")
+        # generate zappa_settings.py
+        local(f"zappa save-python-settings-file {STAGE}", echo=True)
+
+        # required from environment variables or .env
+        access_key = environ["AWS_ACCESS_KEY_ID"]
+        secret_key = environ["AWS_SECRET_ACCESS_KEY"]
+        region = environ["AWS_DEFAULT_REGION"]
+
+        # docker build
+        progress = environ.get("DOCKER_PROGRESS")  # possible value: plain
+        cmd_list = [
+            "docker buildx build --platform linux/amd64",
+            "-f deploy/Dockerfile",
+            f"--build-arg aws_access_key_id={access_key}",
+            f"--build-arg aws_secret_access_key={secret_key}",
+            f"--build-arg aws_default_region={region}",
+            f"-t {IMAGE}:latest",
+        ]
+        if progress:
+            cmd_list.append(f"--progress={progress}")
+
+        cmd_list.append(".")
+        local(" ".join(cmd_list))
+
         is_built = True
 
 
-def run(command=''):
+@task
+def run(c, command=""):
     """
     run command in docker image
     """
-    local(f"docker run -ti -e"
-          f" AWS_ACCESS_KEY_ID={ACCESS_KEY} -e AWS_SECRET_ACCESS_KEY={SECRET_KEY}"
-          f" --rm {IMAGE} {command}")
+    local(f"docker run -it --rm --entrypoint bash {IMAGE}:latest {command}")
 
 
-def _zappa_run(operation=None, args='', docker=True):
-    if not operation:
-        raise ValueError('operation required')
+def _create_ecr_repo(c):
+    aws_default = f"aws --output json ecr"
+    local(f"{aws_default} create-repository --repository-name {IMAGE} --image-scanning-configuration scanOnPush=true")
 
-    command = f"zappa {operation}"
-    if args:
-        command += f' "{args}"'
-
-    if docker:
-        run(command)
-    else:
-        local(command)
+    set_ecr_lifecycle(c)
 
 
-def tail():
+def _deploy_with_ecr(c, update=True):
+    # https://ianwhitestone.work/zappa-serverless-docker/
+    # https://docs.aws.amazon.com/lambda/latest/dg/images-create.html
+
+    build(c)
+
+    aws_default = f"aws --output json ecr"
+
+    # get repository url
+    for try_create in (True, False):
+        result = local(f"{aws_default} describe-repositories --repository-names {IMAGE}", warn=True)
+
+        if result:
+            break
+
+        if try_create:
+            _create_ecr_repo(c)
+
+    result_dict = json.loads(result.stdout)
+    repo_url = result_dict["repositories"][0]["repositoryUri"]
+
+    # re-tag
+    local(f"docker tag {IMAGE}:latest {repo_url}:latest")
+
+    # get authenticated to push to ECR
+    local(f"{aws_default} get-login-password | docker login --username AWS --password-stdin {repo_url}")
+
+    # push it
+    local(f"docker push {repo_url}:latest")
+
+    # deploy (first time) or update
+    command = "update" if update else "deploy"
+    local(f"zappa {command} {STAGE} -d {repo_url}:latest", echo=True)
+
+
+@task
+def set_ecr_lifecycle(c):
+    """set Elastic Container Registry lifecycle"""
+    aws_default = f"aws --output json ecr"
+
+    result = local(f"{aws_default} get-lifecycle-policy --repository-name {IMAGE}", warn=True)
+
+    if result.exited != 0:
+        local(
+            f"{aws_default} put-lifecycle-policy --repository-name {IMAGE} --lifecycle-policy-text file://./deploy/ecr_lifecycle_policy.json"
+        )
+
+
+@task
+def setup(c):
     """
-    tail logs
+    first deploy to AWS lambda & API gateway
     """
-    _zappa_run('tail')
+    _deploy_with_ecr(c, update=False)
 
 
-def status():
-    """
-    show status
-    """
-    _zappa_run('status')
-
-
-def deploy():
+@task
+def deploy(c):
     """
     deploy to AWS lambda & API gateway
     """
-    build()
-    _zappa_run('update')
+    _deploy_with_ecr(c, update=True)
 
 
-def rollback(n=1):
+def _zappa_run(c, operation=None, args=""):
+    if not operation:
+        raise ValueError("operation required")
+
+    command = f"zappa {operation} {STAGE}"
+    if args:
+        command += f' "{args}"'
+
+    local(command, echo=True)
+
+
+@task
+def tail(c):
+    """
+    tail logs
+    """
+    _zappa_run(c, "tail")
+
+
+@task
+def status(c):
+    """
+    show status
+    """
+    _zappa_run(c, "status")
+
+
+@task
+def rollback(c, n=1):
     """
     rollback to previous deployment
     """
-    _zappa_run('rollback', f'-n {n}')
+    _zappa_run(c, "rollback", f"-n {n}")
 
 
-def collectstatic():
+@task
+def collectstatic(c):
     """
     run collectstatic command to upload static files to S3
     """
-    build()
-    _zappa_run('manage', 'collectstatic --noinput')
+    _zappa_run(c, "manage", "collectstatic --noinput")
 
 
-def schedule():
+@task
+def schedule(c):
     """
     schedule functions
     """
-    build()
-    _zappa_run('schedule')
+    _zappa_run(c, "schedule")
 
 
-def migrate():
+@task
+def migrate(c):
     """
     run migrate command to apply DB migrations
     """
-    _zappa_run('manage', 'migrate --noinput')
+    _zappa_run(c, "manage", "migrate --noinput")
 
 
-def setup():
-    """
-    setup test for current developer
-    """
-    build()
-    _zappa_run('deploy')
-
-
-def setup_ssl():
+@task
+def setup_ssl(c):
     """
     setup ssl
     """
-    build()
-    _zappa_run('certify')
+    _zappa_run(c, "certify")
