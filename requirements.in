@@ -14,3 +14,6 @@ oauth2client==4.1.3
 -e git+https://github.com/sebatyler/py_translator@master#egg=py_translator
 
 bepro-python-honey
+
+# deployment
+zappa==0.56.1
