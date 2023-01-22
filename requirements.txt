@@ -6,6 +6,8 @@
 #
 -e git+https://github.com/sebatyler/py_translator@master#egg=py_translator
     # via -r requirements.in
+anyio==3.6.2
+    # via httpcore
 argcomplete==2.0.0
     # via zappa
 attrs==22.2.0
@@ -33,7 +35,10 @@ botocore==1.29.45
 build==0.9.0
     # via pip-tools
 certifi==2019.11.28
-    # via requests
+    # via
+    #   httpcore
+    #   httpx
+    #   requests
 cffi==1.15.1
     # via
     #   bcrypt
@@ -65,12 +70,21 @@ fabric3==1.14.post1
     # via -r requirements.in
 gspread==3.1.0
     # via -r requirements.in
+h11==0.14.0
+    # via httpcore
 hjson==3.1.0
     # via zappa
+httpcore==0.16.3
+    # via httpx
 httplib2==0.19.0
     # via oauth2client
+httpx==0.23.3
+    # via python-telegram-bot
 idna==2.9
-    # via requests
+    # via
+    #   anyio
+    #   requests
+    #   rfc3986
 iniconfig==2.0.0
     # via pytest
 invoke==1.7.3
@@ -147,6 +161,8 @@ python-slugify==4.0.0
     # via
     #   py-translator
     #   zappa
+python-telegram-bot==20.0
+    # via -r requirements.in
 pytz==2019.3
     # via django
 pyyaml==6.0
@@ -161,6 +177,8 @@ requests==2.23.0
     #   gspread
     #   py-translator
     #   zappa
+rfc3986[idna2008]==1.5.0
+    # via httpx
 rsa==4.7
     # via oauth2client
 s3transfer==0.6.0
@@ -178,6 +196,11 @@ six==1.14.0
     #   pathlib2
     #   pynacl
     #   python-dateutil
+sniffio==1.3.0
+    # via
+    #   anyio
+    #   httpcore
+    #   httpx
 somajo==1.8.3
     # via -r requirements.in
 sqlparse==0.4.3
