@@ -46,18 +46,23 @@ def build(c):
         local(f"zappa save-python-settings-file {STAGE}", echo=True)
 
         # required from environment variables or .env
-        access_key = environ["AWS_ACCESS_KEY_ID"]
-        secret_key = environ["AWS_SECRET_ACCESS_KEY"]
-        region = environ["AWS_DEFAULT_REGION"]
+        build_args = [
+            f"--build-arg {key.lower()}={environ[key]}"
+            for key in (
+                "AWS_ACCESS_KEY_ID",
+                "AWS_SECRET_ACCESS_KEY",
+                "AWS_DEFAULT_REGION",
+                "TELEGRAM_BOT_TOKEN",
+                "TELEGRAM_BOT_CHANNEL_ID",
+            )
+        ]
 
         # docker build
         progress = environ.get("DOCKER_PROGRESS")  # possible value: plain
         cmd_list = [
             "docker buildx build --platform linux/amd64",
             "-f deploy/Dockerfile",
-            f"--build-arg aws_access_key_id={access_key}",
-            f"--build-arg aws_secret_access_key={secret_key}",
-            f"--build-arg aws_default_region={region}",
+            *build_args,
             f"-t {IMAGE}:latest",
         ]
         if progress:

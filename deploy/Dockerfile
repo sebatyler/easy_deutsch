@@ -41,6 +41,12 @@ ENV AWS_SECRET_ACCESS_KEY ${aws_secret_access_key}
 ARG aws_default_region
 ENV AWS_DEFAULT_REGION ${aws_default_region}
 
+# telegram
+ARG telegram_bot_token
+ENV TELEGRAM_BOT_TOKEN ${telegram_bot_token}
+ARG telegram_bot_channel_id
+ENV TELEGRAM_BOT_CHANNEL_ID ${telegram_bot_channel_id}
+
 COPY ./ ./
 
 # Grab the zappa handler.py and put it in the working directory
