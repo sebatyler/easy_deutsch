@@ -3,14 +3,12 @@
   "python.formatting.provider": "black",
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
   "python.languageServer": "Pylance",
   "python.analysis.diagnosticMode": "workspace",
-  "python.testing.pytestArgs": [
-    "."
-  ],
+  "python.testing.pytestArgs": ["."],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
 }
