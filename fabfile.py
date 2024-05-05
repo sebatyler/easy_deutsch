@@ -60,7 +60,7 @@ def build(c):
         # docker build
         progress = environ.get("DOCKER_PROGRESS")  # possible value: plain
         cmd_list = [
-            "docker buildx build --platform linux/amd64",
+            "docker buildx build --platform linux/amd64 --provenance false",
             "-f deploy/Dockerfile",
             *build_args,
             f"-t {IMAGE}:latest",
