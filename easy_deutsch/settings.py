@@ -36,15 +36,16 @@ ALLOWED_HOSTS = [".amazonaws.com", "localhost", ".seba.kim"]
 # Application definition
 
 INSTALLED_APPS = [
+    "django_s3_sqlite",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_s3_sqlite",
     "bootstrap4",
     "easy_deutsch",
+    "english",
 ]
 
 MIDDLEWARE = [
@@ -93,6 +94,7 @@ if os.getenv("USE_S3_SQLITE", "0") == "1":
         "NAME": "easy_deutsch.db",
         "BUCKET": "sebatyler-dev",
     }
+print({k: v for k, v in DATABASES["default"].items() if k != "PASSWORD"})
 
 
 # Password validation
