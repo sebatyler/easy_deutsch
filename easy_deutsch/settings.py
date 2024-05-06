@@ -10,10 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+import dotenv
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parent.parent
+
+dotenv.read_dotenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_s3_sqlite",
     "bootstrap4",
     "easy_deutsch",
 ]
@@ -81,6 +87,12 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+if os.getenv("USE_S3_SQLITE", "0") == "1":
+    DATABASES["default"] = {
+        "ENGINE": "django_s3_sqlite",
+        "NAME": "easy_deutsch.db",
+        "BUCKET": "sebatyler-dev",
+    }
 
 
 # Password validation
