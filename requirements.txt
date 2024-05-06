@@ -70,10 +70,13 @@ deprecated==1.2.14
 django==5.0.4
     # via
     #   -r requirements.in
+    #   django-model-utils
     #   django-s3-sqlite
 django-bootstrap4==1.1.0
     # via -r requirements.in
 django-dotenv==1.4.2
+    # via -r requirements.in
+django-model-utils==4.5.1
     # via -r requirements.in
 django-s3-sqlite==0.0.5
     # via -r requirements.in
