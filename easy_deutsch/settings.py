@@ -10,10 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+import dotenv
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parent.parent
+
+dotenv.read_dotenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,6 +36,7 @@ ALLOWED_HOSTS = [".amazonaws.com", "localhost", ".seba.kim"]
 # Application definition
 
 INSTALLED_APPS = [
+    "django_s3_sqlite",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "bootstrap4",
     "easy_deutsch",
+    "english",
 ]
 
 MIDDLEWARE = [
@@ -81,6 +88,13 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+if os.getenv("USE_S3_SQLITE", "0") == "1":
+    DATABASES["default"] = {
+        "ENGINE": "django_s3_sqlite",
+        "NAME": "easy_deutsch.db",
+        "BUCKET": "sebatyler-dev",
+    }
+print({k: v for k, v in DATABASES["default"].items() if k != "PASSWORD"})
 
 
 # Password validation
