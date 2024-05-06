@@ -1,15 +1,9 @@
-import inspect
 import json
 from os import environ
 
 import dotenv
 from fabric import task
 from invoke import run as local
-
-# TODO: upgrade invoke to 2.0
-if not hasattr(inspect, "getargspec"):
-    inspect.getargspec = inspect.getfullargspec
-
 
 dotenv.read_dotenv()
 
